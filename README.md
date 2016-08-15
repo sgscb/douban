@@ -2,6 +2,14 @@
 
 > A Vue.js project to learn douban
 
+
+## Clone
+
+```
+git clone https://github.com/jk77me/frontend-douban.git --depth 1
+```
+
+
 ## Build Setup
 
 ``` bash
