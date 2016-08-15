@@ -1,3 +1,4 @@
+
 <template lang="jade">
   .index-header.index-w
     img(src='https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png').logo

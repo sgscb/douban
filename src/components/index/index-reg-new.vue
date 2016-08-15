@@ -8,6 +8,9 @@
           p.app-slogan 我们的精神角落
           a.download-app 下载豆瓣App
           img(src='https://img3.doubanio.com/f/sns/0c708de69ce692883c1310053c5748c538938cb0/pics/sns/anony_home/icon_qrcode_green.png').download-qr
+          .download
+            img(src='https://img3.doubanio.com/f/sns/1cad523e614ec4ecb6bf91b054436bb79098a958/pics/sns/anony_home/doubanapp_qrcode.png').download-qr-h
+            label iOS/Android扫码直接下载
       .login.index-side-w
         form
           input(class='inp-email inp', type='text', placeholder='邮箱/手机号')
@@ -43,7 +46,6 @@ export default {
   background-repeat: no-repeat;
   background-color: #f1faf1;
   margin-bottom: 30px;
-  overflow: hidden;
 
   .wapper {
     height: 100%;
@@ -104,6 +106,30 @@ export default {
           top: 66px;
           left: 5px;
           border: 1px solid #00B51D;
+        }
+      }
+      .download {
+        background-color:pink;
+        position: relative;
+        left: 115px;
+        top: 25px;
+        display: block;
+        width: 200px;
+        height: 230px;
+        z-index: 2;
+        border: 1px solid black;
+        img {
+          margin: 20px;
+          width: 160px;
+          height: 160px;
+        }
+        label {
+          position: relative;
+          left: 20px;
+          top: -5px;
+          width: 160px;
+          font-size:13.5px;
+          text-align:center;
         }
       }
     }

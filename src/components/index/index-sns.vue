@@ -2,7 +2,7 @@
   .index-sns.index-w
     a(href='#').homepage-top
     .main
-      <index-more></index-more>
+      index-more(title='查看更多', link='https://www.baidu.com/')
     .side.index-side-w
 </template>
 
@@ -13,9 +13,6 @@ export default {
   name: '',
   components: {
     'index-more': indexMore
-  },
-  props: {
-    size: '23333'
   },
   data () {
     return {

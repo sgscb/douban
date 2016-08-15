@@ -1,9 +1,9 @@
 <template lang="jade">
   .index-more
-    h2 热点内容 
+    h2 {{title}}
       span.point &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
       span.wapper (&nbsp;
-        a {{ size }}
+        a(target='_blank', href='{{link}}') 更多
       span.wapper &nbsp;)
 </template>
 
@@ -11,6 +11,7 @@
 export default {
 
   name: 'indexMore',
+  props: ['title', 'link'],
   data () {
     return {
     }
@@ -24,7 +25,7 @@ export default {
   height: 50px;
   position: relative;
   display: block;
-
+  top: 10px;
   h2 {
     color: #072;
     font-size: 15px;
