@@ -39,6 +39,7 @@ export default {
 #index-sidenav {
   width: 100px;
   float: left;
+  margin-right: 20px;
   a {
     color: #614e3c;
     position: relative;
