@@ -1,24 +1,56 @@
+.wapper {
+  width: 950px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+
 .index-w {
-  width:950px; 
+  width: 950px;
 }
 
 .index-side-w {
   width: 270px;
 }
 
+.size12 {
+  font-size: 12px;
+}
 
+.size14 {
+  font-size: 14px;
+}
 
+.size15 {
+  font-size: 15px;
+}
 
+.size25 {
+  font-size: 25px;
+}
 
+.section {
+  margin-bottom: 30px;
+  min-height: 200px;
+  width: 950px;
+  margin: 0 auto;
+}
 
+a {
+  text-decoration: none;
+  color: #37a;
+  word-break: break-all;
+  letter-spacing: 0.1px;
+}
 
+.a-link:hover {
+  color: white;
+  background-color: #37a;
+}
 
-
-
-
-
-
-
+a:visited {
+  color: #669;
+}
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

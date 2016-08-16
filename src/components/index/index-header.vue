@@ -1,6 +1,6 @@
 
 <template lang="jade">
-  .index-header.index-w
+  #index-header.wapper
     img(src='https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png').logo
     .anony-srh
       form(action='', method='get')
@@ -15,7 +15,7 @@
 <script>
 export default {
 
-  name: 'indexHeader',
+  name: 'index-header',
 
   data () {
     return {
@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.index-header {
+#index-header {
 	margin: 0px auto 7px;
   height: 50px;
 

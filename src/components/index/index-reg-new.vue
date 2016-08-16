@@ -1,14 +1,14 @@
 <template lang="jade">
-  .index-reg-new
-    .wapper.index-w
+  #index-reg-new
+    .wapper
       .app
         .summary
           p.app-title 豆瓣
             span.version 4.0
           p.app-slogan 我们的精神角落
-          a.download-app 下载豆瓣App
-          img(src='https://img3.doubanio.com/f/sns/0c708de69ce692883c1310053c5748c538938cb0/pics/sns/anony_home/icon_qrcode_green.png').download-qr
-          .download
+          a.download-app.size12 下载豆瓣App
+          img(src='https://img3.doubanio.com/f/sns/0c708de69ce692883c1310053c5748c538938cb0/pics/sns/anony_home/icon_qrcode_green.png', @mouseover='mouseover()').download-qr
+          .download(@mouseout='mouseout()', @mouseover='mouseover()')
             img(src='https://img3.doubanio.com/f/sns/1cad523e614ec4ecb6bf91b054436bb79098a958/pics/sns/anony_home/doubanapp_qrcode.png').download-qr-h
             label iOS/Android扫码直接下载
       .login.index-side-w
@@ -29,16 +29,24 @@
 
 <script>
 export default {
-  name: 'indexRegNew',
+  name: 'index-reg-new',
   data () {
     return {
+    }
+  },
+  methods: {
+    mouseover: function () {
+      document.querySelector('.download').style.display = 'block'
+    },
+    mouseout: function () {
+      document.querySelector('.download').style.display = 'none'
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.index-reg-new {
+#index-reg-new {
   background-image: url('https://img3.doubanio.com/f/sns/463f29e6c00cdc1d15226bdcd3c86908526b9380/pics/sns/anony_home/doubanapp4_bg.png');
   height: 180px;
   width: 100%;
@@ -48,10 +56,6 @@ export default {
   margin-bottom: 30px;
 
   .wapper {
-    height: 100%;
-    position: relative;
-    margin: 0 auto;
-
     .app {
       height: inherit;
       width: 630px;
@@ -92,7 +96,6 @@ export default {
           line-height: 30px;
           text-align: center;
           border-radius: 2px;
-          font-size: 12px;
           position: relative;
           top: 55px;
           clear: both;
@@ -109,11 +112,11 @@ export default {
         }
       }
       .download {
-        background-color:pink;
+        background-color:white;
         position: relative;
         left: 115px;
         top: 25px;
-        display: block;
+        display: none;
         width: 200px;
         height: 230px;
         z-index: 2;
@@ -144,7 +147,7 @@ export default {
       .inp {
         width: calc(100% - 25px);
         height: 28px;
-        padding: 0 10px;
+        padding: 0 7px;
         position: relative;
         margin-bottom: 4px;
       }
