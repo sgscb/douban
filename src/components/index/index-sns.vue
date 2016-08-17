@@ -20,7 +20,7 @@
           li(v-for='album in albums').size12
             .pic
               a(href='https://www.baidu.com/')
-                img(src='https://img1.doubanio.com/view/photo/albumcover/public/p2246016158.jpg', alt='')
+                img(src='../../assets/index-sns-album.jpg', alt='')
               a.a-link {{album.title}}
               span.num {{album.num}}
       .notes
@@ -42,7 +42,7 @@ export default {
   data () {
     return {
       albums: [{
-        img: 'http://img1.doubanio.com/view/photo/albumcover/public/p2371934247.jpg',
+        img: 'https://img1.doubanio.com/view/photo/albumcover/public/p2246016158.jpg',
         link: 'http://baidu.com/',
         title: '我的日记1',
         num: '33张照片'
@@ -161,12 +161,10 @@ export default {
         width: 170px;
         vertical-align: top;
         margin: 10px 0 0 10px;
-        
           .pic {
             img {
               width: 170px;
             }
-
             .num {
               position: relative;
               left: 5px;

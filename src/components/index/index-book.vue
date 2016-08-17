@@ -4,11 +4,11 @@
     index-sidenav
     .side
       index-more(title='热门标签', link='')
-      ul
-        li
-          label [233]
-          a 234
-          a 345
+      ul.book-cates
+        li.size12.book-cates-item(v-for='bookCate in bookCates')
+          ul.cate
+            li.cate-item(v-for='cate in bookCate', track-by="$index")
+              a.a-link {{cate}}
     .main
       .mod
         index-more(title='新书速递', link='')
@@ -71,7 +71,10 @@ export default {
   },
   data () {
     return {
-
+      bookCates: [
+        ['[加额鹅鹅鹅]', '加额鹅鹅鹅', '加额鹅鹅鹅', '加额鹅鹅鹅3', '2加额鹅鹅鹅', '加额鹅鹅鹅3'],
+        ['[1112]', '1113', '1112', '1113', '1112', '1113', '加额鹅鹅鹅', '加额鹅鹅鹅', '加额鹅鹅鹅', '加额鹅鹅鹅3', '2加额鹅鹅鹅', '加额鹅鹅鹅3']
+      ]
     }
   }
 }
@@ -86,6 +89,7 @@ export default {
      width: calc(950px - 425px);
     .mod {
       width: 100%;
+      display: inline-block;
       ul {
         position: relative;
         top: -10px;
@@ -146,8 +150,33 @@ export default {
     width: 265px;
     margin-left: 30px;
     float: right;
-    background-color: pink;
     height: 200px;
+    .book-cates {
+      .book-cates-item {
+        .cate {
+          margin: -1px 0 10px 0;
+          padding-bottom: 8px;
+          border-bottom: 1px solid #eaeaea;
+
+            li:first-child {
+              a {
+                color: lightgray;
+                cursor: auto;
+              }
+              a:hover {
+                background-color:inherit;
+                color: lightgray;
+              }
+            }
+          .cate-item {
+            display: inline-block;
+            position: relative;
+            margin-right: 10px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
   }
 }
 </style>
