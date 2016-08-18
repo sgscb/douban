@@ -120,6 +120,7 @@ export default {
           display: -webkit-box;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
+          display: inline-block;
         }
 
         .author {
