@@ -3,13 +3,13 @@
     .wapper
       .app
         .summary
-          p.app-title 豆瓣
-            span.version 4.0
-          p.app-slogan 我们的精神角落
-          a.download-app.size12 下载豆瓣App
-          img(src='https://img3.doubanio.com/f/sns/0c708de69ce692883c1310053c5748c538938cb0/pics/sns/anony_home/icon_qrcode_green.png', @mouseover='mouseover()').download-qr
+          p.app-title {{app.title}} 
+            span.version {{app.version}} 
+          p.app-slogan {{app.slogan}} 
+          a.download-app.size12(:href='app.lnk_app') 下载豆瓣App
+          img(:src='app.expand_qr', @mouseover='mouseover()').download-qr
           .download(@mouseout='mouseout()', @mouseover='mouseover()')
-            img(src='https://img3.doubanio.com/f/sns/1cad523e614ec4ecb6bf91b054436bb79098a958/pics/sns/anony_home/doubanapp_qrcode.png').download-qr-h
+            img(:src='app.qr_expand').download-qr-h
             label iOS/Android扫码直接下载
       .login.index-side-w
         form
@@ -30,10 +30,14 @@
 <script>
 export default {
   name: 'index-reg-new',
+
+  props: ['app'],
+
   data () {
     return {
     }
   },
+
   methods: {
     mouseover: function () {
       document.querySelector('.download').style.display = 'block'

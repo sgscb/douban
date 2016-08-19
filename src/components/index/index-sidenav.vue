@@ -3,19 +3,11 @@
   .mod
     a.section-title.size25.a-link 读书
     .side-links
-      ul.size14
+      ul.size14(v-for='item in side_links')
         li
-          a.a-link 分类1
-        li
-          a.a-link 分类2
-        li
-          a.a-link 分类3
+          a.a-link(:href='item.link') {{item.title}}
   .apps-list
     ul.size12
-      li
-        .app-icon
-          a
-        a.app-name.a-link 豆瓣阅读
       li
         .app-icon
           a
@@ -27,6 +19,8 @@
 export default {
 
   name: 'index-sidenav',
+
+  props: ['side_links'],
 
   data () {
     return {

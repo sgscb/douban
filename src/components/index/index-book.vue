@@ -1,61 +1,24 @@
 <template lang="jade">
 #index-book
   .section
-    index-sidenav
+    index-sidenav(:side_links='book.book_side_links')
     .side
       index-more(title='热门标签', link='')
       ul.book-cates
-        li.size12.book-cates-item(v-for='bookCate in bookCates')
+        li.size12.book-cates-item(v-for='tags in book.book_tags')
           ul.cate
-            li.cate-item(v-for='cate in bookCate', track-by="$index")
-              a.a-link {{cate}}
+            li.cate-item(v-for='tag in tags', track-by="$index")
+              a.a-link(:href='tag.link') {{tag.title}}
     .main
-      .mod
+      .mod(v-for='items in book.books')
         index-more(title='新书速递', link='')
         ul
-          li
-            img.pic(src='https://img1.doubanio.com/mpic/s28855479.jpg')
-            a.title.size14 八万四千问
-            p.author.size12 宗萨蒋扬33322323333钦哲仁...
-            a.bn-link.size12 免费试读
-          li
-            img.pic(src='https://img1.doubanio.com/mpic/s28855479.jpg')
-            a.title.size14 八万四千问
-            p.author.size12 宗萨蒋扬33322323333钦哲仁...
-            a.bn-link.size12 免费试读
-          li
-            img.pic(src='https://img1.doubanio.com/mpic/s28855479.jpg')
-            a.title.size14 八万四千问
-            p.author.size12 宗萨蒋扬33322323333钦哲仁...
-            a.bn-link.size12 免费试读
-          li
-            img.pic(src='https://img1.doubanio.com/mpic/s28855479.jpg')
-            a.title.size14 八万四千问
-            p.author.size12 宗萨..
-            a.bn-link.size12 免费试读
-      .mod
-        index-more(title='新书速递', link='')
-        ul
-          li
-            img.pic(src='https://img1.doubanio.com/mpic/s28855479.jpg')
-            a.title.size14 八万四千问
-            p.author.size12 宗萨蒋扬33322323333钦哲仁...
-            a.bn-link.size12 免费试读
-          li
-            img.pic(src='https://img1.doubanio.com/mpic/s28855479.jpg')
-            a.title.size14 八万四千问
-            p.author.size12 宗萨蒋扬33322323333钦哲仁...
-            a.bn-link.size12 免费试读
-          li
-            img.pic(src='https://img1.doubanio.com/mpic/s28855479.jpg')
-            a.title.size14 八万四千问
-            p.author.size12 宗萨蒋扬33322323333钦哲仁...
-            a.bn-link.size12 免费试读
-          li
-            img.pic(src='https://img1.doubanio.com/mpic/s28855479.jpg')
-            a.title.size14 八万四千问
-            p.author.size12 宗萨..
-            a.bn-link.size12 免费试读
+          li(v-for='item in items', track-by='$index')
+            img.pic(:src='item.pic')
+            a.title.size14(:href='item.link') {{item.title}}
+            p.author.size12 {{item.author}}
+            //- p.price.size129 {{item.price}}
+            a.bn-link.size12(:href='item.reader') 免费试读
 </template>
 
 <script>
@@ -65,16 +28,15 @@ import indexMore from './index-more'
 export default {
 
   name: 'index-book',
+
   components: {
     indexSidenav,
     indexMore
   },
+
+  props: ['book'],
   data () {
     return {
-      bookCates: [
-        ['[加额鹅鹅鹅]', '加额鹅鹅鹅', '加额鹅鹅鹅', '加额鹅鹅鹅3', '2加额鹅鹅鹅', '加额鹅鹅鹅3'],
-        ['[1112]', '1113', '1112', '1113', '1112', '1113', '加额鹅鹅鹅', '加额鹅鹅鹅', '加额鹅鹅鹅', '加额鹅鹅鹅3', '2加额鹅鹅鹅', '加额鹅鹅鹅3']
-      ]
     }
   }
 }

@@ -1,7 +1,7 @@
 
 <template lang="jade">
   #index-header.wapper
-    img(src='https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png').logo
+    img.logo(src='https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png')
     .anony-srh
       form(action='', method='get')
         input(class='inp', type='text', placeholder='书籍、电影、音乐、小组、小站、成员', name='p')

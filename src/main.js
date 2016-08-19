@@ -9,6 +9,7 @@ Vue.use(VueRouter)
 var router = new VueRouter({hashbang: false, history: true})
 Vue.http.options.emulateHTTP = true
 Vue.http.options.emulateJSON = true
+Vue.http.options.root = 'http://127.0.0.1:3000'
 
 router.map({
   '/': {

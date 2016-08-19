@@ -10,25 +10,25 @@
       index-more(title='线上活动', link='https://www.baidu.com/')
       .online
         ul
-          li.size12(v-for='online in onlines')
-            a.title {{online.title}}
+          li.size12(v-for='online in sns.onlines')
+            a.title.a-link(:href='online.link') {{online.title}}
             p.time {{online.time}}
-            p.num {{online.num}}
+            p.num {{online.desc}}
     .main
       .albums
         ul
-          li(v-for='album in albums').size12
+          li(v-for='album in sns.albums').size12
             .pic
-              a(href='https://www.baidu.com/')
-                img(src='../../assets/index-sns-album.jpg', alt='')
+              a(:href='album.link')
+                img(:src='album.pic', alt='')
               a.a-link {{album.title}}
               span.num {{album.num}}
       .notes
          ul
-          li.size12(v-for='note in notes')
-            a.a-link(target='_blank', href='http://www.zhihu.com/') {{note.title}}
-            p.author {{note.author}}
-            p.discribe {{note.discribe}}
+          li.size12(v-for='note in sns.notes')
+            a.a-link(:href='note.link') {{note.title}}
+            p.author(v-if='note.desc') {{note.author}}
+            p.desc(v-if='note.desc') {{note.desc}}
 </template>
 
 <script>
@@ -36,92 +36,15 @@ import indexMore from './index-more'
 export default {
 
   name: 'index-sns',
+
   components: {
     'index-more': indexMore
   },
+
+  props: ['sns'],
+
   data () {
     return {
-      albums: [{
-        img: 'https://img1.doubanio.com/view/photo/albumcover/public/p2246016158.jpg',
-        link: 'http://baidu.com/',
-        title: '我的日记1',
-        num: '33张照片'
-      },
-       {img: '../../assets/index-homepage-top.png',
-        link: '',
-        title: '我的日记2',
-        num: '33张照片'
-      },
-       {img: '../../assets/index-sns-album.jpg',
-        link: '',
-        title: '我的日记3',
-        num: '33张照片'
-      },
-       {img: '../../assets/index-sns-album.jpg',
-        link: '',
-        title: '我的日记4',
-        num: '33张照片'
-      }],
-      notes: [{
-        title: '二狗蛋款金额为if及诶哦我我给哦额外我机构为公IE文件给我饿哦一个吻',
-        link: '',
-        author: '二狗的日记',
-        discribe: '卧槽金额金额金额金额金额金额金额金额金额二姐姐'
-      },
-      {
-        title: '二狗蛋款金额为if及诶哦我我给哦额外我机构为公IE文件给我饿哦一个吻',
-        link: '',
-        author: null,
-        discribe: null
-      },
-      {
-        title: '二狗蛋款金额为if及诶哦我我给哦额外我机构为公IE文件给我饿哦一个吻',
-        link: '',
-        author: '',
-        discribe: ''
-      },
-      {
-        title: '二狗蛋款金额为if及诶哦我我给哦额外我机构为公IE文件给我饿哦一个吻',
-        link: '',
-        author: '',
-        discribe: ''
-      },
-      {
-        title: '二狗蛋款金额为if及诶哦我我给哦额外我机构为公IE文件给我饿哦一个吻',
-        link: '',
-        author: '',
-        discribe: ''
-      },
-      {
-        title: '二狗蛋款金额为if及诶哦我我给哦额外我机构为公IE文件给我饿哦一个吻',
-        link: '',
-        author: '',
-        discribe: ''
-      },
-      {
-        title: '二狗蛋款金额为if及诶哦',
-        link: '',
-        author: '',
-        discribe: ''
-      }],
-      onlines: [{
-        title: '宅的装甲：晒出你最爱的T恤1',
-        link: '',
-        time: '时间：6月29日 - 9月1日',
-        num: '297人参加'
-      },
-      {
-        title: '宅的装甲：晒出你最爱的T恤2',
-        link: '',
-        time: '时间：6月29日 - 9月1日',
-        num: '297人参加'
-      },
-      {
-        title: '宅的装甲：晒出你最爱的T恤3',
-        link: '',
-        time: '时间：6月29日 - 9月1日',
-        num: '297人参加'
-      }]
     }
   }
 }
@@ -130,7 +53,6 @@ export default {
 <style lang='scss' scoped>
 #index-sns {
   color: #999;
-
   .homepage-top {
     display: block;
     background-image: url('../../assets/index-homepage-top.png');
@@ -143,7 +65,7 @@ export default {
     position: relative;
     top: -10px;
     width: calc(100% - 270px);
-
+    min-height: 400px;
     .albums {
       float: left;
       width: 350px;
@@ -180,7 +102,7 @@ export default {
         li {
           line-height: 18px;
           margin-bottom: 10px;
-          .discribe {
+          .desc {
             color: gray;
           }
         }
