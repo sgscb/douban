@@ -1,5 +1,5 @@
 import App from './App'
-
+import Book from './components/book/book'
 var Vue = require('vue')
 var VueRouter = require('vue-router')
 var VueResource = require('vue-resource')
@@ -14,6 +14,9 @@ Vue.http.options.root = 'http://127.0.0.1:3000'
 router.map({
   '/': {
     component: App
+  },
+  '/book': {
+    component: Book
   }
 })
 

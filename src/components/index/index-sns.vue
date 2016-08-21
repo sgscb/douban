@@ -5,8 +5,8 @@
     index-more(title='热点内容', link='https://www.baidu.com/')
     .side.index-side-w
       .yike
-        a(target='_blank', target='#')
-          img(style='width:265px', src="https://img3.doubanio.com/img/files/file-1431585796.jpg")
+        a(target='_blank', :target='sns.yike.link')
+          img(style='width:265px', :src="sns.yike.pic")
       index-more(title='线上活动', link='https://www.baidu.com/')
       .online
         ul
