@@ -61,16 +61,19 @@ export default {
   margin-top: 30px;
   border-top: 1px dotted lightgray;
   line-height: 20px;
+}
 
-  .icp { float: left; }
+.icp { 
+  float: left; 
+}
 
-  .about { float: right; }
+.about { 
+  float: right; 
+}
 
-  img {
-    height: 16px;
-    align: top;
-    cursor: auto;
-  }
-
+img {
+  height: 16px;
+  align: top;
+  cursor: auto;
 }
 </style>

@@ -26,21 +26,23 @@ export default {
   position: relative;
   display: block;
   top: 10px;
-  h2 {
-    color: #072;
-    .point {
-      letter-spacing: -5px;
-      position: relative;
-      margin: 0 5px;
-    }
-    .wapper {
-      color: black;
-      a {
-        color: #669;
-      }
-    }
-  }
 }
 
+h2 {
+  color: #072;
+}
 
+.point {
+  letter-spacing: -5px;
+  position: relative;
+  margin: 0 5px;
+}
+    
+.wapper {
+  color: black;
+}
+
+a {
+  color: #669;
+}
 </style>
