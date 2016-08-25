@@ -1,6 +1,6 @@
 <template lang="jade">
 #index-book
-  .section
+  .wapper
     index-sidenav(:side_links='book.book_side_links')
     .side
       index-more(title='热门标签', link='')

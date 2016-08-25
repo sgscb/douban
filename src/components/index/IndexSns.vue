@@ -1,6 +1,6 @@
 <template lang="jade">
 #index-sns
-  .section
+  .wapper
     a(href='#').homepage-top
     index-more(title='热点内容', link='https://www.baidu.com/')
     .side.index-side-w
