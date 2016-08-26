@@ -44,13 +44,13 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ├── config
 ├── index.html
 ├── node_modules
-├── package.json // 依赖项
+├── package.json                                   // 依赖项
 ├── src
-│   ├── App.vue // App
-│   ├── assets // 资源文件
-│   │   ├── Book.vue // 豆瓣读书首页(页面)
-│   │   ├── IndexVisitor.vue // 未登录首页(页面)
-│   │   ├── book // 豆瓣读书首页组件
+│   ├── App.vue                                    // App
+│   ├── assets                                     // 资源文件
+│   │   ├── Book.vue                               // 豆瓣读书首页(页面)
+│   │   ├── IndexVisitor.vue                       // 未登录首页(页面)
+│   │   ├── book                                   // 豆瓣读书首页组件
 │   │   │   ├── BookRec.vue
 │   │   │   ├── BookRow5.vue
 │   │   │   ├── Ebooks.vue
@@ -60,7 +60,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 │   │   │   ├── PopularAuthors.vue
 │   │   │   ├── PopularBooks.vue
 │   │   │   └── WeeklyTop.vue
-│   │   ├── index // 首页组件(未登录)
+│   │   ├── index                                  // 首页组件(未登录)
 │   │   │   ├── IndexBook.vue
 │   │   │   ├── IndexFooter.vue
 │   │   │   ├── IndexHeader.vue
@@ -68,12 +68,12 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 │   │   │   ├── IndexRegNew.vue
 │   │   │   ├── IndexSideNav.vue
 │   │   │   └── IndexSns.vue
-│   │   └── pub // 公用组件
+│   │   └── pub                                   // 公用组件
 │   │       ├── Vfooter.vue
 │   │       ├── Vheader.vue
 │   │       └── Vnav.vue
-│   └── main.js // 入口
-├── static // 静态文件
-└── test // 测试
+│   └── main.js                                   // 入口
+├── static                                        // 静态文件
+└── test                                          // 测试
 
 
