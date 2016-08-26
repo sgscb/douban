@@ -12,28 +12,61 @@
         p.title 传奇在路上
           span.price $42.8
         p.desc 张佳玮的第一本旅行游记，讲述发生在路上的那些传奇。从文艺青年的巴黎，到莫奈笔下变幻的诺曼底云层，从瑞士的干酪锅，到全世界游子心目中的最好吃名单，为你一一道来。
-    ul
-      li(v-for='0 in 5')
-        .cover
-          a
-            img(src='https://img3.doubanio.com/lpic/s28922981.jpg')
-        br
-        a.title.size13 平原上的摩西
-        p.author.size12 $12.8
+    .row-5
+      ul
+        book-row-5
 </template>
 
 <script>
+import BookRow5 from './BookRow5'
 export default {
 
-  name: 'marketbooks',
+  name: 'market-books',
+
+  components: {
+    'book-row-5': BookRow5
+  },
 
   data () {
     return {
 
-    };
+    }
   }
-};
+}
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+
+@import "../../assets/book.scss";
+
+.market-books .bd .top .cover {
+  float: left;
+  position: relative;
+  margin-bottom: 50px;
+  margin-right: 20px;
+}
+
+.market-books .bd .top .cover img {
+  width: 130px;
+  height: 172px;
+}
+
+.market-books .bd .top .title {
+  position: relative;
+  font-size: 23px;
+  line-height: 32px;
+  padding-top: 20px;
+}
+
+.market-books .bd .top .title .price {
+  font-size: 17px;
+  color: #E76648;
+  margin-left: 17px;
+}
+
+.market-books .bd .top .desc {
+  color: #9B9B9B;
+  font-size: 14px;
+  line-height: 20px;
+}
 </style>

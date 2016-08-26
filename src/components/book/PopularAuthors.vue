@@ -21,7 +21,7 @@
 <script>
 export default {
 
-  name: 'ebookx',
+  name: 'popularauthors',
 
   data () {
     return {
@@ -31,5 +31,19 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+
+@import "../../assets/book.scss";
+
+.popular-authors .bd ul li .cover {
+  float: left;
+  margin-right: 20px;
+}
+
+.popular-authors .bd ul li .info {
+  float: left;
+  line-height: 20px;
+  width: 200px;
+}
+
 </style>

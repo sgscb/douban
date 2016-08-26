@@ -1,5 +1,5 @@
 <template lang="jade">
-.books-popular
+.popular-books
   .hd
     span 最受关注图书榜
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 虚构类»
@@ -28,11 +28,48 @@ export default {
 
   data () {
     return {
-
     }
   }
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+
+@import "../../assets/book.scss";
+
+.popular-books ul li .cover {
+  margin-right: 18px;
+  float: left;
+}
+
+.popular-books ul li .title {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.popular-books ul li p {
+  position: relative;
+  margin-top: 7px;
+}
+
+.popular-books ul li .star .score {
+  color: #e09015;
+  font-size: 10px;
+}
+
+.popular-books ul li .star .img {
+  width: 55px;
+  height: 11px;
+  display: inline-block;
+  margin: 0 3px 0 0;
+  background: url(https://img3.doubanio.com/f/shire/b8f4c3672ef81106701071831e22422a745d3b74/pics/rating_icons/ic_rating_s.png) no-repeat;
+}
+
+.popular-books ul li .reviews {
+  color: #666;
+  clear: both;
+  padding-top: 15px;
+  word-wrap: word-break;
+  line-height: 20px;
+}
 </style>
