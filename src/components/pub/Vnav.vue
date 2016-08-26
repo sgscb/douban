@@ -2,8 +2,8 @@
 #vnav
   .nav-primary
     .wapper
-      .nav-logo
-        a 豆瓣读书
+      a
+        .nav-logo
       .nav-search
         form
           .inp
@@ -85,13 +85,6 @@ export default {
   margin-top: 10px;
 }
 
-.nav-logo a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  line-height: 100em;
-}
 
 .nav-search {
   position: relative;

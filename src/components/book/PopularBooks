@@ -1,0 +1,38 @@
+<template lang="jade">
+.books-popular
+  .hd
+    span 最受关注图书榜
+    a(href='https://book.douban.com/latest?icn=index-latestbook-all') 虚构类»
+    a(href='https://book.douban.com/latest?icn=index-latestbook-all') 非虚构类»
+  .bd.row-2
+    ul.size12
+      li(v-for='0 in 6')
+        .cover
+          a
+            img(src='https://img1.doubanio.com/spic/s28673707.jpg')
+        a.title.size15 死神的福利
+        p.star
+          span.img
+          span.score 8.0
+        p.author 作者：[日]伊坂幸太郎
+        p.type 日本文学 / 日系推理 / 小说
+        p.reviews 准备一百个雨伞，给下雨天没带伞的陌生人一人送一把，这个爱心举动保证百分之百感动死神。(
+          a.comment 轮询评论
+          )
+</template>
+
+<script>
+export default {
+
+  name: 'polularbooks',
+
+  data () {
+    return {
+
+    }
+  }
+}
+</script>
+
+<style lang="css" scoped>
+</style>

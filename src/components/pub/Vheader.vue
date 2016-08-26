@@ -1,7 +1,7 @@
 
 <template lang="jade">
   #vheader
-    .bd.size12
+    .bd.size12.no-bg
       ul.nav-links
         li(v-for='item in navLinks')
           a(class='{{item.class}}', target='_blank', :href='item.link') {{item.title}}

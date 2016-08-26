@@ -34,7 +34,7 @@
 }
 
 .section {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 a {
@@ -42,15 +42,20 @@ a {
   color: #37a;
   word-break: break-all;
   letter-spacing: 0.05px;
+  font-size: 12px;
 }
 
-.a-link:hover {
+a:hover {
   color: white;
   background-color: #37a;
 }
 
 a:visited {
   color: #669;
+}
+
+.cover a:hover, .no-bg a:hover  {
+  background-color: inherit;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
