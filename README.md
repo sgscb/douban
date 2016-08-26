@@ -36,6 +36,9 @@ npm test
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+### 目录结构
+<pre>
+.
 ├── README.md 
 ├── build
 ├── config
