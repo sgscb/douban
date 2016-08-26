@@ -1,9 +1,9 @@
-# frontend_douban
+# 模仿豆瓣前端
 
-> A Vue.js project to learn douban
+> A Vue.js project to learn frontend
 
 
-## Clone
+## Clone(Faster)
 
 ```
 git clone https://github.com/jk77me/frontend-douban.git --depth 1
