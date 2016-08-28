@@ -12,9 +12,8 @@
         p.title 传奇在路上
           span.price $42.8
         p.desc 张佳玮的第一本旅行游记，讲述发生在路上的那些传奇。从文艺青年的巴黎，到莫奈笔下变幻的诺曼底云层，从瑞士的干酪锅，到全世界游子心目中的最好吃名单，为你一一道来。
-    .row-5
-      ul
-        book-row-5
+    ul
+      book-row-5
 </template>
 
 <script>

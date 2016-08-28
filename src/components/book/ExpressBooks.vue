@@ -12,7 +12,7 @@
         a(class='next', @click='next()') ›
   .bd.row-5
     ul.carousel(v-for='0 in 6', track-by="$index")
-      book-row-5
+      book-row-5(:page='page')
 </template>
 
 <script>
@@ -46,7 +46,8 @@ export default {
 
     // 无限滚动 利用数据给head和tail添加相同数据 到边界后定时无动画说偷偷刷新
     carousel: function (index) {
-      console.log(index)
+      // console.log(index)
+      this.$set('page', index)
       var el = document.querySelector('.books-express .bd')
       if (index === 5) {
         this.$set('page', 1)
