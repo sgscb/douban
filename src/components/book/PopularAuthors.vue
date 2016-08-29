@@ -5,23 +5,25 @@
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 进入书评专区»
   .bd.row-2
     ul
-      li(v-for=' 1 in 4')
+      li(v-for='item in items')
         .cover
-          a
-            img(src='https://img3.doubanio.com/icon/u53672944-12.jpg')
+          a(:href='item.link', target='_blank')
+            img(:src='item.pic', alt='item.name')
         .info.size12
           p
-            a 喵了个咪
-          p 评论
+            a {{item.name}}
+          p {{item.to}}
           p
-            a 我家没有龙——关于一部糟糕的先锋小说集的阅读报告
-          p 3有用     2016-08-25
+            a {{item.info}}
+          p {{item.num}} {{item.time}}
 </template>
 
 <script>
 export default {
 
   name: 'popularauthors',
+
+  props: ['items'],
 
   data () {
     return {

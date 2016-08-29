@@ -6,14 +6,14 @@
   .bd.row-5
     .top
       .cover
-        a
-          img(src='https://img3.doubanio.com/f/market/9a5b334ac1a12beb2f3b1c56b78e0c17fd962752/pics/newbook/pidl_data/taleonroad.png')
+        a(:href='bookdata.top.link', target='_blank')
+          img(:src='bookdata.top.pic', :alt='bookdata.top.title')
       .info
-        p.title 传奇在路上
-          span.price $42.8
-        p.desc 张佳玮的第一本旅行游记，讲述发生在路上的那些传奇。从文艺青年的巴黎，到莫奈笔下变幻的诺曼底云层，从瑞士的干酪锅，到全世界游子心目中的最好吃名单，为你一一道来。
+        p.title {{bookdata.top.title}}
+          span.price {{bookdata.top.price}}
+        p.desc {{bookdata.top.desc}}
     ul
-      book-row-5
+      book-row-5(:bookdata='bookdata.items')
 </template>
 
 <script>
@@ -25,6 +25,8 @@ export default {
   components: {
     'book-row-5': BookRow5
   },
+
+  props: ['bookdata'],
 
   data () {
     return {

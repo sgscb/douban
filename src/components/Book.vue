@@ -10,24 +10,26 @@
     .content <!-- 广告位2 -->
       .bubble
         .small-bubble
-        p.title.size14 床前明月光
-        p.sub-title.size12 3jj3j
-        p.desc.size12 床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明月光床前明
+        p.title.size14 {{bubbleData.title}}
+        br
+        p.sub-title.size12 {{bubbleData.subTitle}}
+        br
+        p.desc.size12 {{bubbleData.desc}}
       #book_home_middle_banner.section.no-bg <!-- 广告位2 -->
         a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
           img(src='../assets/book-middle.jpg')
-      express-books <!-- 组件 -->
-      popular-books
-      ebooks
-      market-books
-      popular-authors
+      express-books(:bookdata='bookdata.booksExpress') <!-- 组件 -->
+      popular-books(:bookdata='bookdata.popularBooks')
+      market-books(:bookdata='bookdata.marketBooks')
+      ebooks(:bookdata='bookdata.ebooks')
+      popular-authors(:items='bookdata.popularAuthors')
       #book_home_bottom_banner.section.no-bg <!-- 广告位4 -->
         a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
           img(src='../assets/book-bottom.jpg')
     .book-side
       #home-top-right <!-- 广告位5 -->
         a
-          img(src='https://img3.doubanio.com/view/dale-online/dale_ad/public/6a2b542ac353b7b.jpg')
+          img(src='../assets/book-top-right.jpg')
       hot-tags <!-- 侧边栏组件-->
       weekly-top
       book-rec
@@ -81,11 +83,26 @@ export default {
     'book-rec': BookRec
   },
 
+  ready () {
+    this.$http.get('douban/book/index').then((response) => {
+      if (response.status > 400) {
+        console.log('error')
+        return
+      }
+      // console.log(response.data.booksExpress)
+      let temp = response.data.booksExpress
+      temp.push(temp[0])
+      temp.unshift(temp[temp.length - 1])
+      response.data.booksExpress = temp
+      this.$set('bookdata', response.data)
+    }, () => {
+    })
+  },
+
   data () {
     return {
-      items: [4, 1, 2, 3, 4, 1],
-      page: 1,
-      lastVendor: 0
+      bubbleData: '',
+      bookdata: ''
     }
   },
 
@@ -93,7 +110,12 @@ export default {
   },
 
   events: {
-    bubbleShow: function (x, y) {
+    bubbleShow: function (x, y, book) {
+      this.$set('bubbleData', {
+        title: book.title,
+        subTitle: book.author + '/' + book.year + '/' + book.publisher,
+        desc: book.abstract
+      })
       var bubble = document.querySelector('.wapper .content .bubble')
       // console.log(bubble)
       bubble.style.display = 'block'
@@ -139,14 +161,14 @@ export default {
 
 .bubble {
   width: 300px;
-  height:200px;
+  min-height:200px;
   background-color: green;
   position: absolute;
   padding: 20px;
   line-height: 20px;
   border: 1px solid black;
   border-radius: 4px;
-  background-color: white;
+  background-color: #F5FFF7;
   z-index: 10;
   display: none;
 }

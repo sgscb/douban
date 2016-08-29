@@ -5,7 +5,7 @@
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 查看全部»
   .bd.row-5
     ul
-      book-row-5
+      book-row-5(:bookdata='bookdata')
 </template>
 
 <script>
@@ -18,6 +18,8 @@ export default {
     'book-row-5': BookRow5
   },
 
+  props: ['bookdata'],
+
   data () {
     return {
 
@@ -28,4 +30,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/book.scss";
+
 </style>

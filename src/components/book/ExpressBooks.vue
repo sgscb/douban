@@ -11,23 +11,24 @@
         a(class='prev', @click='prev()') ‹
         a(class='next', @click='next()') ›
   .bd.row-5
-    ul.carousel(v-for='0 in 6', track-by="$index")
-      book-row-5(:page='page')
+    ul.carousel(v-for='book in bookdata', track-by="$index")
+      book-row-5(:page='page', :bookdata='book')
 </template>
 
 <script>
 import BookRow5 from './BookRow5'
 export default {
 
-  name: 'expressbooks',
+  name: 'express-books',
 
   components: {
     'book-row-5': BookRow5
   },
 
+  props: ['bookdata'],
+
   data () {
     return {
-      items: [4, 1, 2, 3, 4, 1],
       page: 1,
       lastVendor: 0
     }
@@ -54,13 +55,13 @@ export default {
         setTimeout(() => {
           el.style.transition = 'none'
           el.style.left = -605 + 'px'
-        }, 600)
+        }, 1000)
       } else if (index === 0) {
         this.$set('page', 4)
         setTimeout(() => {
           el.style.transition = 'none'
           el.style.left = -605 * 4 + 'px'
-        }, 600)
+        }, 1000)
       }
 
       el.style.transition = 'all 0.7s ease-in 0s'
@@ -95,6 +96,7 @@ export default {
 
 .books-express {
   overflow: hidden;
+  
 }
 
 .slide-controls {
