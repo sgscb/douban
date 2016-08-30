@@ -1,6 +1,7 @@
 # 模仿豆瓣前端
 
 > A Vue.js project to learn frontend
+> 请确认已经clone[backend-douban](https://github.com/jk77me/backend-douban)代码, 并成功运行
 
 
 ## Clone(Faster)
