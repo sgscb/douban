@@ -48,7 +48,11 @@ export default {
 }
 
 .about { 
-  float: right; 
+  float: right;
+}
+
+a {
+  display: inline-block;
 }
 
 </style>

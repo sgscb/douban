@@ -5,16 +5,18 @@
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 所有热门标签»
   .bd
     ul
-      li(v-for='0 in 4')
+      li(v-for='tags in tagdata')
         ul.section
-          li(v-for='0 in 10')
-            a {{$index}}{{$index}}{{$index}}
+          li(v-for='tag in tags')
+            a(:href='tag.link', target='_blank') {{tag.title}}
 </template>
 
 <script>
 export default {
 
   name: 'hot-tags',
+
+  props: ['tagdata'],
 
   data () {
     return {
@@ -69,5 +71,10 @@ export default {
 .hot-tags .bd .section li:last-child a {
   color: gray;
   padding-right: 10px;
+}
+
+a:hover {
+  background-color: inherit;
+  color: inherit;
 }
 </style>

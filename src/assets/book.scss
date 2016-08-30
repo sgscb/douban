@@ -2,9 +2,16 @@
 
 $bd_width: 605px;
 
+a {
+  //  white-space:nowrap; 
+  // text-overflow:ellipsis; 
+  // -o-text-overflow:ellipsis; 
+  // overflow:hidden;
+}
+
 .row-2 ul li {
   width: 275px;
-  min-height: 180px;
+  min-height: 100px;
   display: inline-block;
   margin-bottom: 30px;
   margin-right: 20px;

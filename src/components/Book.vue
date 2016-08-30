@@ -22,7 +22,7 @@
       popular-books(:bookdata='bookdata.popularBooks')
       market-books(:bookdata='bookdata.marketBooks')
       ebooks(:bookdata='bookdata.ebooks')
-      popular-authors(:items='bookdata.popularAuthors')
+      popular-authors(:authordata='bookdata.popularAuthors')
       #book_home_bottom_banner.section.no-bg <!-- 广告位4 -->
         a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
           img(src='../assets/book-bottom.jpg')
@@ -30,9 +30,9 @@
       #home-top-right <!-- 广告位5 -->
         a
           img(src='../assets/book-top-right.jpg')
-      hot-tags <!-- 侧边栏组件-->
-      weekly-top
-      book-rec
+      hot-tags(:tagdata='bookdata.hotTags') <!-- 侧边栏组件-->
+      weekly-top(:bookdata='bookdata.weeklyTop')
+      book-rec(:bookdata='bookdata.bookRec')
       .apply-links.section.size14
         ul
           li

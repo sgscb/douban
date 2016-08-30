@@ -5,16 +5,14 @@
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 进入书评专区»
   .bd.row-2
     ul
-      li(v-for='item in items')
+      li(v-for='item in authordata')
         .cover
           a(:href='item.link', target='_blank')
             img(:src='item.pic', alt='item.name')
         .info.size12
-          p
-            a {{item.name}}
+          a {{item.name}}
           p {{item.to}}
-          p
-            a {{item.info}}
+          a {{item.info}}
           p {{item.num}} {{item.time}}
 </template>
 
@@ -23,7 +21,7 @@ export default {
 
   name: 'popularauthors',
 
-  props: ['items'],
+  props: ['authordata'],
 
   data () {
     return {
@@ -46,6 +44,11 @@ export default {
   float: left;
   line-height: 20px;
   width: 200px;
+  overflow: hidden;
+  p, a {
+    // display: inline;
+    word-break: break-all;
+  }
 }
 
 </style>

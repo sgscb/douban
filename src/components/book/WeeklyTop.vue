@@ -13,13 +13,13 @@
       li(@click='vendor(2)')
         img(src='../../assets/vendor-dangdang.png')
         span 当当
-    ul.list-ranking
-      li(v-for='0 in 5')
-        span.index {{$index}}.
+    ul.list-ranking(v-for='books in bookdata', v-show='!$index')
+      li(v-for='book in books')
+        span.index {{$index + 1}}.
         .info
-          a.name 永远讲不完的故事（新译本
-          p.author (德)米切尔·恩德
-        a.buy-btn 去购买
+          a.name(:href='book.link', target='_blank') {{book.title}}
+          p.author {{book.author}}
+        a.buy-btn(:href='book.link', target='_blank')  去购买
 </template>
 
 <script>
@@ -27,9 +27,31 @@ export default {
 
   name: 'weekly-top',
 
+  props: ['bookdata'],
+
   data () {
     return {
+      lastVendor: 0
+    }
+  },
 
+  methods: {
+    vendor: function (index) {
+      console.log(index)
+      let els = document.querySelectorAll('.nav-vendor li')
+      els[this.lastVendor].className = null
+      els[index].className = 'li-on'
+      var uls = document.querySelectorAll('.weekly-top .bd .list-ranking')
+      for (var i = 0; i < uls.length; i++) {
+        var el = uls[i]
+        if (i === index) {
+          console.log(el)
+          el.style.display = 'block'
+        } else {
+          el.style.display = 'none'
+        }
+      }
+      this.$set('lastVendor', index)
     }
   }
 }
@@ -80,6 +102,12 @@ export default {
 .weekly-top .list-ranking li .info {
   display: inline-block;
   margin-left: 5px;
+  width: calc(100% - 80px);
+}
+
+.weekly-top .list-ranking li .info .name {
+  display: inline-block;
+  width: 100%;
 }
 
 .weekly-top .list-ranking li .buy-btn {
@@ -96,5 +124,10 @@ export default {
     border: 1px solid #D7C891;
     color: #D7C891;
   }
+}
+
+a:hover {
+  background-color: inherit;
+  color: inherit;
 }
 </style>

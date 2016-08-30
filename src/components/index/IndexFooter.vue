@@ -76,4 +76,8 @@ img {
   align: top;
   cursor: auto;
 }
+
+a {
+  display: inline-block;
+}
 </style>
