@@ -31,24 +31,21 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 
-@import "../../assets/book.scss";
+@import "../../assets/book.styl"
 
-.popular-authors .bd ul li .cover {
-  float: left;
-  margin-right: 20px;
-}
+.popular-authors .bd ul li .cover
+  float left
+  margin-right 20px
 
-.popular-authors .bd ul li .info {
-  float: left;
-  line-height: 20px;
-  width: 200px;
-  overflow: hidden;
-  p, a {
-    // display: inline;
-    word-break: break-all;
-  }
-}
+.popular-authors .bd ul li .info
+  float left
+  line-height 20px
+  width 200px
+  overflow hidden
+  p, a
+    // display inline
+    word-break break-all
 
 </style>

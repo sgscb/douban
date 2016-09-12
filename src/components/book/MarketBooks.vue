@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import BookRow5 from './BookRow5'
+import BookView from './BookView.vue'
 export default {
 
   name: 'market-books',
 
   components: {
-    'book-row-5': BookRow5
+    'book-row-5': BookView
   },
 
   props: ['bookdata'],
@@ -36,38 +36,33 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 
-@import "../../assets/book.scss";
+@import "../../assets/book.styl";
 
-.market-books .bd .top .cover {
-  float: left;
-  position: relative;
-  margin-bottom: 50px;
-  margin-right: 20px;
-}
+.market-books .bd .top .cover
+  float left
+  position relative
+  margin-bottom 50px
+  margin-right 20px
 
-.market-books .bd .top .cover img {
-  width: 130px;
-  height: 172px;
-}
+.market-books .bd .top .cover img
+  width 130px
+  height 172px
 
-.market-books .bd .top .title {
-  position: relative;
-  font-size: 23px;
-  line-height: 32px;
-  padding-top: 20px;
-}
+.market-books .bd .top .title
+  position relative
+  font-size 23px
+  line-height 32px
+  padding-top 20px
 
-.market-books .bd .top .title .price {
-  font-size: 17px;
-  color: #E76648;
-  margin-left: 17px;
-}
+.market-books .bd .top .title .price
+  font-size 17px
+  color #E76648
+  margin-left 17px
 
-.market-books .bd .top .desc {
-  color: #9B9B9B;
-  font-size: 14px;
-  line-height: 20px;
-}
+.market-books .bd .top .desc
+  color #9B9B9B
+  font-size 14px
+  line-height 20px
 </style>

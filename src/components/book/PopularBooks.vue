@@ -18,7 +18,6 @@
         p.type {{book.type}}
         p.reviews {{book.reviews}} (
           a.comment(:href='book.link', target='_blank') {{book.commenter}}
-          )
 </template>
 
 <script>
@@ -35,43 +34,37 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 
-@import "../../assets/book.scss";
+@import "../../assets/book.styl";
 
-.popular-books ul li .cover {
-  margin-right: 18px;
-  float: left;
-}
+.popular-books ul li .cover
+  margin-right 18px
+  float left
 
-.popular-books ul li .title {
-  display: inline-block;
-  margin-top: 5px;
-}
+.popular-books ul li .title
+  display inline-block
+  margin-top 5px
 
-.popular-books ul li p {
-  position: relative;
-  margin-top: 7px;
-}
+.popular-books ul li p
+  position relative
+  margin-top 7px
 
-.popular-books ul li .star .score {
-  color: #e09015;
-  font-size: 10px;
-}
+.popular-books ul li .star .score
+  color #e09015
+  font-size 10px
 
-.popular-books ul li .star .img {
-  width: 55px;
-  height: 11px;
-  display: inline-block;
-  margin: 0 3px 0 0;
-  background: url(https://img3.doubanio.com/f/shire/b8f4c3672ef81106701071831e22422a745d3b74/pics/rating_icons/ic_rating_s.png) no-repeat;
-}
+.popular-books ul li .star .img
+  width 55px
+  height 11px
+  display inline-block
+  margin 0 3px 0 0
+  background url(https://img3.doubanio.com/f/shire/b8f4c3672ef81106701071831e22422a745d3b74/pics/rating_icons/ic_rating_s.png) no-repeat
 
-.popular-books ul li .reviews {
-  color: #666;
-  clear: both;
-  padding-top: 15px;
-  word-wrap: word-break;
-  line-height: 20px;
-}
+.popular-books ul li .reviews
+  color #666
+  clear both
+  padding-top 15px
+  word-wrap word-break
+  line-height 20px
 </style>

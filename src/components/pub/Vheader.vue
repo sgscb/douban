@@ -4,7 +4,7 @@
     .bd.size12.no-bg
       ul.nav-links
         li(v-for='item in navLinks')
-          a(class='{{item.class}}', target='_blank', :href='item.link') {{item.title}}
+          a(class='item.class', target='_blank', :href='item.link') {{item.title}}
         li
           a.bn-more(@click='more()', href='#') 更多
           .more-items
@@ -93,63 +93,63 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-#vheader {
-  height: 28px;
-  background-color: pink;
-  background-color: #545652;
-}
+<style lang="stylus" scoped>
+#vheader 
+  height 28px
+  background-color pink
+  background-color #545652
 
-.nav-links {
-  display: inline-block;
-}
 
-.nav-links li {
-  display: inline-block;
-}
+.nav-links 
+  display inline-block
 
-.more-items {
-  position: absolute;
-  background-color: white;
-  display: none;
-  padding: 10px 3px;
-}
 
-.more-items li {
-  display: block;
-  padding: 0 5px;
-  height: 30px;
-}
+.nav-links li 
+  display inline-block
+
+
+.more-items 
+  position absolute
+  background-color white
+  display none
+  padding 10px 3px
+
+
+.more-items li 
+  display block
+  padding 0 5px
+  height 30px
+
   
-.more-items li a {
-  color: gray;
-  line-height: 30px;
-  height: 100%;
-}
+.more-items li a 
+  color gray
+  line-height 30px
+  height 100%
 
-.more-items li:hover {
-  background-color: rgb(233, 233, 233);
-}
 
-.nav-info {
-  display: inline-block;
-  float: right;
-  margin-right: 15px;
-}
+.more-items li:hover 
+  background-color rgb(233, 233, 233)
 
-.nav-doubanapp {
-  display: inline-block;
-  float: right;
-}
 
-a {
-  padding: 0 12px;
-  height: 28px;
-  line-height: 28px;
-  color: #d5d5d5;
-}
+.nav-info 
+  display inline-block
+  float right
+  margin-right 15px
 
-a:hover {
-  color: white;
-}
+
+.nav-doubanapp 
+  display inline-block
+  float right
+
+
+a 
+  padding 0 12px
+  height 28px
+  line-height 28px
+  color #d5d5d5
+
+
+a:hover 
+  color white
+
 </style>

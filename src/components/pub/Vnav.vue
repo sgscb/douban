@@ -12,7 +12,7 @@
             input(type='submit', value='搜索')
   .nav-secondary
     ul.wapper.size13
-      li(v-for='item in navItems', class='{{item.class}}')
+      li(v-for='item in navItems', class='item.class')
         a(target='_blank') {{item.title}}
   
 </template>

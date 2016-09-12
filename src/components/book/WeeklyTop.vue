@@ -57,77 +57,65 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 
-@import "../../assets/book.scss";
+@import "../../assets/book.styl"
 
-.weekly-top .nav-vendor {
-  margin-bottom: 15px;
-}
+.weekly-top .nav-vendor
+  margin-bottom 15px
 
-.weekly-top .nav-vendor li img {
-  width: 18px;
-  float: left;
-}
+.weekly-top .nav-vendor li img
+  width 18px
+  float left
 
-.weekly-top .nav-vendor li span {
-  line-height: 18px;
-}
+.weekly-top .nav-vendor li span
+  line-height 18px
 
-.weekly-top .nav-vendor li {
-  color: #ccc5bf;
-  margin-right: 10px;
-  display: inline-block;
-  padding: 5px;
-  border-radius: 2px;
-  cursor: pointer;
-}
+.weekly-top .nav-vendor li
+  color #ccc5bf
+  margin-right 10px
+  display inline-block
+  padding 5px
+  border-radius 2px
+  cursor pointer
 
-.weekly-top .nav-vendor .li-on, .weekly-top .nav-vendor li:hover {
-  color: #fff;
-  background: #9b7c5e;
-}
+.weekly-top .nav-vendor .li-on, .weekly-top .nav-vendor li:hover
+  color #fff
+  background #9b7c5e
 
-.weekly-top .list-ranking li {
-  display: block;
-  line-height: 20px;
-  border-bottom: 1px dashed #ddd;
-  padding: 6px 0px;
-}
+.weekly-top .list-ranking li
+  display block
+  line-height 20px
+  border-bottom 1px dashed #ddd
+  padding 6px 0px
 
-.weekly-top .list-ranking li .index {
-  float: left;
-}
+.weekly-top .list-ranking li .index
+  float left
 
-.weekly-top .list-ranking li .info {
-  display: inline-block;
-  margin-left: 5px;
-  width: calc(100% - 80px);
-}
+.weekly-top .list-ranking li .info
+  display inline-block
+  margin-left 5px
+  width calc(100% - 80px)
 
-.weekly-top .list-ranking li .info .name {
-  display: inline-block;
-  width: 100%;
-}
+.weekly-top .list-ranking li .info .name
+  display inline-block
+  width 100%
 
-.weekly-top .list-ranking li .buy-btn {
-  float: right;
-  color: gray;
-  margin-top: 7px;
-  margin-right: 5px;
-  padding: 3px 4px;
-}
+.weekly-top .list-ranking li .buy-btn
+  float right
+  color gray
+  margin-top 7px
+  margin-right 5px
+  padding 3px 4px
 
-.weekly-top .list-ranking li:hover {
-  background-color: #EAEAE7;
-  .buy-btn {
-    border: 1px solid #D7C891;
-    color: #D7C891;
-  }
-}
+.weekly-top .list-ranking li:hover
+  background-color #EAEAE7
+  .buy-btn
+    border 1px solid #D7C891
+    color #D7C891
 
-a:hover {
-  background-color: inherit;
-  color: inherit;
-}
+
+a:hover
+  background-color inherit
+  color inherit
 </style>

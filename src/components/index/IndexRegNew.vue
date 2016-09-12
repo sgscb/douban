@@ -28,15 +28,26 @@
 </template>
 
 <script>
+
+function fetchItem (store) {
+  return store.dispatch('FETCH_ITEMS', {
+    ids: [store.state.route.params.id]
+  })
+}
 export default {
   name: 'index-reg-new',
 
-  props: ['app'],
-
-  data () {
-    return {
+  computed: {
+    item () {
+      return this.$store.state.items[this.$route.params.id]
     }
   },
+  
+  preFetch: fetchItem,
+
+  beforeMount () {
+    fetchItem(this.$store)
+  }
 
   methods: {
     mouseover: function () {
@@ -49,7 +60,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 #index-reg-new {
   background-image: url('https://img3.doubanio.com/f/sns/463f29e6c00cdc1d15226bdcd3c86908526b9380/pics/sns/anony_home/doubanapp4_bg.png');
   height: 180px;

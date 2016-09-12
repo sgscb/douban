@@ -3,7 +3,7 @@
     h2.size15 {{title}}
       span.point &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
       span.wapper.size12 (&nbsp;
-        a(target='_blank', href='{{link}}') 更多
+        a(target='_blank', :href='link') 更多
       span.wapper.size12 &nbsp;)
 </template>
 
@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .index-more {
   width: 100%;
   height: 50px;

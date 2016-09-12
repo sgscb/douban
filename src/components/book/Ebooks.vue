@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import BookRow5 from './BookRow5'
+import BookView from './BookView.vue'
 export default {
 
   name: 'ebooks',
 
   components: {
-    'book-row-5': BookRow5
+    'book-row-5': BookView
   },
 
   props: ['bookdata'],
@@ -26,9 +26,10 @@ export default {
     }
   }
 }
-</script>
 
-<style lang="scss" scoped>
-@import "../../assets/book.scss";
+</script>
+<style lang="stylus" scoped>
+
+@import "../../assets/book.styl"
 
 </style>

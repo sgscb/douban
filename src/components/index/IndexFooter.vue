@@ -53,31 +53,29 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-#index-footer {
-  overflow: hidden;
-  zoom: 1;
-  padding: 14px 0;
-  margin-top: 30px;
-  border-top: 1px dotted lightgray;
-  line-height: 20px;
-}
+<style lang="stylus" scoped>
 
-.icp { 
-  float: left; 
-}
+@import '../../assets/main.styl'
 
-.about { 
-  float: right; 
-}
+#index-footer
+  overflow hidden
+  zoom 1
+  padding 14px 0
+  margin-top 30px
+  border-top 1px dotted lightgray
+  line-height 20px
 
-img {
-  height: 16px;
-  align: top;
-  cursor: auto;
-}
+.icp 
+  float left 
 
-a {
-  display: inline-block;
-}
+.about 
+  float right 
+
+img
+  height 16px
+  align top
+  cursor auto
+
+a
+  display inline-block
 </style>

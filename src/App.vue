@@ -1,20 +1,15 @@
-<template lang="jade">
-#app
-  router-view
+<template>
+  <div id="app">
+    <transition name="fade" mode="out-in">
+      <router-view class="view"></router-view>
+    </transition>
+  </div>
 </template>
 
-<script>
-export default {
-  ready () {
-  },
+<style lang="stylus">
+@import "./assets/main.styl"
 
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
-<style lang='scss'>
-@import "./assets/main.scss";
+#app
+  position relative
+  
 </style>

@@ -5,8 +5,8 @@
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 更多»
     .slide-controls
       ol.slide-dots
-        li(v-for='1 in 4')
-          a(@click='carousel($index + 1)', class='dot{{$index}}')
+        li()
+          a(@click='carousel($index + 1)', class='dot $index')
       .slide-btns
         a(class='prev', @click='prev()') ‹
         a(class='next', @click='next()') ›
@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import BookRow5 from './BookRow5'
+import BookView from './BookView.vue'
 export default {
 
   name: 'express-books',
 
   components: {
-    'book-row-5': BookRow5
+    'book-row-5': BookView
   },
 
   props: ['bookdata'],
@@ -90,64 +90,52 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 
-@import "../../assets/book.scss";
+@import "../../assets/book.styl"
 
-.books-express {
-  overflow: hidden;
-  
-}
+.books-express
+  overflow hidden
 
-.slide-controls {
-  float: right;
-}
+.slide-controls
+  float right
 
-.slide-controls .slide-dots li {
-  display: inline;
-}
+.slide-controls .slide-dots li
+  display inline
 
-.slide-controls .slide-dots a {
-  width: 5px;
-  height: 5px;
-  display: inline-block;
-  zoom: 1;
-  margin-left: 8px;
-  border-radius: 5px;
-  background: #dfdfdf;
-}
+.slide-controls .slide-dots a
+  width 5px
+  height 5px
+  display inline-block
+  zoom 1
+  margin-left 8px
+  border-radius 5px
+  background #dfdfdf
 
-.slide-controls .slide-dots li:first-child a {
-  background: #9b9a8f;
-}
+.slide-controls .slide-dots li:first-child a
+  background #9b9a8f
 
-.slide-controls .slide-dots {
-  float: left;
-  position: relative;
-  margin-top: -1px;
-}
+.slide-controls .slide-dots
+  float left
+  position relative
+  margin-top -1px
 
-.slide-controls .slide-btns {
-  float: right;
-}
+.slide-controls .slide-btns
+  float right
 
-.slide-controls .slide-btns a {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  text-align: center;
-  line-height: 16px;
-  border-radius: 8px;
-  font: 100 16px Arial;
-  color: white;
-  background-color: #9b9a8f;
-}
+.slide-controls .slide-btns a
+  display inline-block
+  width 18px
+  height 18px
+  text-align center
+  line-height 16px
+  border-radius 8px
+  font 100 16px Arial
+  color white
+  background-color #9b9a8f
 
-$bd_width: 605px;
-
-.books-express .bd {
-  width: $bd_width * 6;
-  position: relative;
-  left: -$bd_width;
-}
+.books-express .bd
+  width (6 * bd_width = 605px)
+  position relative
+  left -bd_width
 </style>

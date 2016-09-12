@@ -5,13 +5,13 @@
     index-more(title='热点内容', link='https://www.baidu.com/')
     .side.index-side-w
       .yike
-        a(target='_blank', :target='sns.yike.link')
-          img(style='width:265px', :src="sns.yike.pic")
+        a(target='_blank', :target='sns.yike.link |' | '')
+          img(style='width:265px', :src="sns.yike.pic" | '')
       index-more(title='线上活动', link='https://www.baidu.com/')
       .online
         ul
           li.size12(v-for='online in sns.onlines')
-            a.title.a-link(:href='online.link') {{online.title}}
+            a.title.a-link(:href='online.link' | '') {{online.title}}
             p.time {{online.time}}
             p.num {{online.desc}}
     .main
@@ -19,20 +19,20 @@
         ul
           li(v-for='album in sns.albums').size12
             .pic
-              a(:href='album.link')
-                img(:src='album.pic', alt='')
+              a(:href='album.link' | '')
+                img(:src='album.pic' | '', alt='')
               a.a-link {{album.title}}
               span.num {{album.num}}
       .notes
          ul
           li.size12(v-for='note in sns.notes')
-            a.a-link(:href='note.link') {{note.title}}
-            p.author(v-if='note.desc') {{note.author}}
-            p.desc(v-if='note.desc') {{note.desc}}
+            a.a-link(:href='note.link' | '') {{note.title}}
+            p.author(v-if='note.desc' | '') {{note.author}}
+            p.desc(v-if='note.desc' | '') {{note.desc}}
 </template>
 
 <script>
-import IndexMore from './IndexMore'
+import IndexMore from './IndexMore.vue'
 export default {
 
   name: 'index-sns',
@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='css' scoped>
 #index-sns {
   color: #999;
 }

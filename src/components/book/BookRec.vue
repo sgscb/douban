@@ -27,33 +27,28 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 
-@import "../../assets/book.scss";
+@import "../../assets/book.styl"
 
-.book_rec .bd  .title {
-  word-wrap: break-word;
-}
+.book_rec .bd  .title
+  word-wrap break-word
 
-.book_rec .bd .clear {
-  width: 100%;
-  display: block;
-  clear: both;
-}
+.book_rec .bd .clear
+  width 100%
+  display block
+  clear both
 
-img {
-  width: 80px;
-  height: 100px;
-}
+img
+  width 80px
+  height 100px
 
-
-.book_rec .bd ul li {
-  // display: inline-block;
-  float:left;
-  margin-right: 30px;
-  margin-bottom: 10px;
-  width: calc(33.3% - 30px);
-  overflow: hidden;
-}
+.book_rec .bd ul li
+  // display inline-block
+  float:left
+  margin-right 30px
+  margin-bottom 10px
+  width calc(33.3% - 30px)
+  overflow hidden
 
 </style>
