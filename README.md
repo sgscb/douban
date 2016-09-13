@@ -1,21 +1,13 @@
 # 模仿豆瓣前端
 
-> A Vue.js project to learn frontend
-> 请确认已经clone[backend-douban](https://github.com/jk77me/backend-douban)代码, 并成功运行
+> Use Vue.js 2.0, 
 
-
-## Clone(Faster)
-
-```
-git clone https://github.com/jk77me/frontend-douban.git --depth 1
-```
+> vue.js(2.0 rc-5), vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, mongoose(3.0+), redis
 
 ## 记录
 1. 在2.0中 `Vue.set(store.item, item)` 不会触发更新dom, `store.item = item` 才可以
 2. 由于 `server side render` 的原因, 不能使用 `vue-resource` 了, 改用 `superagent` 发请求了
 3. `store.item` 为{}时, 在页面中引用 会直接error, mock数据, 请求成功再更新 
-
-
 
 ## Build Setup
 
