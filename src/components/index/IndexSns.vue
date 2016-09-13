@@ -82,14 +82,13 @@ export default {
 
 .albums {
   float: left;
-  width: 350px;
-  margin-right: 30px;
+  width: 370px;
   font-size: 0;
   letter-spacing: -0.31em;
 }
 
 .albums ul {
-  margin: -10px 0 0 -50px;
+  margin: 0 0 0 -40px;
 }
 
 .albums ul li {
@@ -122,8 +121,9 @@ export default {
 }
 
 .notes li {
-  line-height: 18px;
-  margin-bottom: 10px; 
+  line-height: 20px;
+  margin-bottom: 10px;
+  margin-left: -30px;
 }
 
 .side {
@@ -138,10 +138,11 @@ export default {
 .side ul {
   position: relative;
   top: -15px;
+  margin-left: -40px;
 }
 
 .side li {
-  line-height: 18px;
+  line-height: 20px;
   margin-bottom: 10px;
 }
 </style>
