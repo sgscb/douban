@@ -10,6 +10,10 @@
 git clone https://github.com/jk77me/frontend-douban.git --depth 1
 ```
 
+## 记录
+1. 在2.0中 `Vue.set(store.item, item)` 不会触发更新dom, `store.item = item` 才可以
+2. 由于 `server side render` 的原因, 不能使用 `vue-resource` 了, 改用 `superagent` 发请求了
+3. `store.item` 为{}时, 在页面中引用 会直接error, mock数据, 请求成功再更新 
 
 
 
