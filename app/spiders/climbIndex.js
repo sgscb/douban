@@ -8,9 +8,9 @@ module.exports = function (superagent, cheerio, socket) {
   let url = 'http://www.douban.com'
   let _log = console.log
   console.log = function (data) {
-    // _log(data)
+    _log(data)
     socket.emit('news', data)
-    // _log.call(console, arguments)
+    _log.call(console, arguments)
   }
   socket.emit('system', '正在前往' + url + '...');
 

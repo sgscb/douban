@@ -1,17 +1,20 @@
-<template lang="jade">
-#index-sidenav
-  .mod
-    a.section-title.size25.a-link 读书
-    .side-links
-      ul.size14(v-for='item in side_links')
-        li
-          a.a-link(:href='item.link') {{item.title}}
-  .apps-list
-    ul.size12
-      li
-        .app-icon
-          a
-        a.app-name.a-link 豆瓣阅读
+<template>
+<div id="index-sidenav">
+  <div class="mod"><a class="section-title size25 a-link">读书</a>
+    <div class="side-links">
+      <ul v-for="item in side_links" class="size14">
+        <li><a :href="item.link" class="a-link">{{item.title}}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="apps-list">
+    <ul class="size12">
+      <li>
+        <div class="app-icon"><a></a></div><a class="app-name a-link">豆瓣阅读</a>
+      </li>
+    </ul>
+  </div>
+</div>
 </template>
 
 // titleColor需要提取 app-list需要提取

@@ -1,54 +1,39 @@
-<template lang="jade">
-  #index-reg-new
-    .wapper
-      .app
-        .summary
-          p.app-title {{app.title}} 
-            span.version {{app.version}} 
-          p.app-slogan {{app.slogan}} 
-          a.download-app.size12(:href='app.lnk_app') 下载豆瓣App
-          img(:src='app.expand_qr', @mouseover='mouseover()').download-qr
-          .download(@mouseout='mouseout()', @mouseover='mouseover()')
-            img(:src='app.qr_expand').download-qr-h
-            label iOS/Android扫码直接下载
-      .login.index-side-w
-        form
-          input(class='inp-email inp', type='text', placeholder='邮箱/手机号')
-          input(class='inp-pass inp', type='text', placeholder='密码')
-          button(class='btn-login btn') 登陆豆瓣
-          button(class='btn-logup btn') 注册账号
-          .action
-            input(id='box-remb', type='checkbox', value='remb')
-            label(class='remb-label', for='box-remb') 记住我
-            ul.other-login
-              li
-                a(class='weibo', title='微博登陆', target='_blank')
-              li
-                a(class='wechat', title='微信登陆', target='_blank')
+<template >
+  <div id="index-reg-new">
+    <div class="wapper">
+      <div class="app">
+        <div class="summary">
+          <p class="app-title">{{item.title}}<span class="version">{{item.version}} </span></p>
+          <p class="app-slogan">{{item.slogan}}</p><a :href="item.lnk_app" class="download-app size12">下载豆瓣App</a><img :src="item.expand_qr" @mouseover="mouseover()" class="download-qr"/>
+          <div @mouseout="mouseout()" @mouseover="mouseover()" class="download"><img :src="item.qr_expand" class="download-qr-h"/>
+            <label>iOS/Android扫码直接下载</label>
+          </div> 
+        </div>
+      </div>
+      <div class="login index-side-w">
+        <form>
+          <input type="text" placeholder="邮箱/手机号" class="inp-email inp"/>
+          <input type="text" placeholder="密码" class="inp-pass inp"/>
+          <button class="btn-login btn">登陆豆瓣</button>
+          <button class="btn-logup btn">注册账号</button>
+          <div class="action">
+            <input id="box-remb" type="checkbox" value="remb"/>
+            <label for="box-remb" class="remb-label">记住我</label>
+            <ul class="other-login">
+              <li><a title="微博登陆" target="_blank" class="weibo"></a></li>
+              <li><a title="微信登陆" target="_blank" class="wechat"></a></li>
+            </ul>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-
-function fetchItem (store) {
-  return store.dispatch('FETCH_ITEMS', {
-    ids: [store.state.route.params.id]
-  })
-}
 export default {
   name: 'index-reg-new',
-
-  computed: {
-    item () {
-      return this.$store.state.items[this.$route.params.id]
-    }
-  },
-  
-  preFetch: fetchItem,
-
-  beforeMount () {
-    fetchItem(this.$store)
-  }
-
+  props: ['item'],
   methods: {
     mouseover: function () {
       document.querySelector('.download').style.display = 'block'
@@ -175,7 +160,7 @@ export default {
 
 .btn {
   position: relative;
-  width: calc(50% - 4px);
+  width: calc(50% - 6px);
   height: 30px;
   background-color: rgba(1,1,1,0);
   border: none;

@@ -9,6 +9,11 @@ const climbIndex = require('../app/spiders/climbIndex')
 const climbBook = require('../app/spiders/climbBook')
 const router = express.Router()
 
+router.get('/api/spider', (req, res) => {
+  climbIndex(superagent, cheerio, io)
+  res.send('已经开始爬取')
+})
+
 // 豆瓣首页
 router.get('/api/douban/index', (req, res) => {
   client.get('/api/douban/index', (err, data) => {
@@ -16,7 +21,6 @@ router.get('/api/douban/index', (req, res) => {
       res.send(err)
       return
     }
-    console.log(data);
     !data && climbIndex(superagent, cheerio, io)
     res.send(JSON.parse(data))
   })

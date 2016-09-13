@@ -21,7 +21,7 @@ module.exports = function ($, superagent) {
       if (newUrl.indexOf('?v=') != -1) {
         newUrl = newUrl.substring(0, newUrl.indexOf('?v='))
       }
-      $(el).attr('src', 'http://' + IPv4 + ':3000' + '/images/' + newUrl)
+      $(el).attr('src', 'http://' + IPv4 + ':8080' + '/images/' + newUrl)
       superagent(url).pipe(fs.createWriteStream(dir + newUrl))
     })
 }

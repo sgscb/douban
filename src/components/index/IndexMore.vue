@@ -1,10 +1,7 @@
-<template lang="jade">
-  .index-more
-    h2.size15 {{title}}
-      span.point &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
-      span.wapper.size12 (&nbsp;
-        a(target='_blank', :href='link') 更多
-      span.wapper.size12 &nbsp;)
+<template>
+<div class="index-more">
+  <h2 class="size15">{{title}}<span class="point">&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·</span><span class="wapper size12">(&nbsp;<a target="_blank" :href="link">更多</a></span><span class="wapper size12">&nbsp;)</span></h2>
+</div>
 </template>
 
 <script>

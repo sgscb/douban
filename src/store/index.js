@@ -1,27 +1,26 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {fetchIndexData} from './api'
-
+import {fetchItem} from './api.js'
+import {_index} from './mock.js'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    indexV
+    index: _index
   },
 
   actions: {
     FETCH_ITEMS: ({ commit, state }, { url }) => {
-      if (ids.length) {
-        return fetchIndexData(url).then(items => commit('SET_ITEMS', { items }))
-      } else {
-        return Promise.resolve()
-      }
+      return fetchItem(url).then((items) => commit('SET_ITEMS', { items }))
     },
   },
 
   mutations: {
     SET_ITEMS: (state, { items }) => {
-      Vue.set(state.indexV, items)
+      console.log('修改');
+      console.log(state);
+      state.index = items
+      // Vue.set(state.index, items)
     }
   },
 

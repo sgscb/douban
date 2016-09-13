@@ -1,24 +1,29 @@
-<template lang="jade">
-#index-book
-  .wapper
-    index-sidenav(:side_links='book.book_side_links')
-    .side
-      index-more(title='热门标签', link='')
-      ul.book-cates
-        li.size12.book-cates-item(v-for='tags in book.book_tags')
-          ul.cate
-            li.cate-item(v-for='tag in tags', track-by="$index")
-              a.a-link(:href='tag.link') {{tag.title}}
-    .main
-      .mod(v-for='items in book.books')
-        index-more(title='新书速递', link='')
-        ul
-          li(v-for='item in items', track-by='$index')
-            img.pic(:src='item.pic')
-            a.title.size14(:href='item.link') {{item.title}}
-            p.author.size12 {{item.author}}
-            //- p.price.size129 {{item.price}}
-            a.bn-link.size12(:href='item.reader') 免费试读
+<template>
+<div id="index-book">
+  <div class="wapper">
+    <index-sidenav :side_links="book.book_side_links"></index-sidenav>
+    <div class="side">
+      <index-more title="热门标签" link=""></index-more>
+      <ul class="book-cates">
+        <li v-for="tags in book.book_tags" class="size12 book-cates-item">
+          <ul class="cate">
+            <li v-for="tag in tags" track-by="$index" class="cate-item"><a :href="tag.link" class="a-link">{{tag.title}}</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <div v-for="items in book.books" class="mod">
+        <index-more title="新书速递" link=""></index-more>
+        <ul>
+          <li v-for="item in items" track-by="$index"><img :src="item.pic" class="pic"/><a :href="item.link" class="title size14">{{item.title}}</a>
+            <p class="author size12">{{item.author}}</p><a :href="item.reader" class="bn-link size12">免费试读</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>

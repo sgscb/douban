@@ -236,20 +236,20 @@ module.exports = function (superagent, cheerio, socket) {
        weeklyTop.push(items)
      })
 
-     let bookRec = []
-     $('#wrapper #content .block5 #book_rec dl').each(function(index, el) {
-       let link = $(el).find('dd a').attr().href
-       let pic = $(el).find('dt a img').attr().src
-       let title = $(el).find('dd a').text().trim()
-       console.log(title)
-       console.log(link)
-       console.log(pic)
-       bookRec.push({
-         title: title,
-         link: link,
-         pic: pic
-       })
-     })
+     // let bookRec = []
+     // $('#wrapper #content .block5 #book_rec dl').each(function(index, el) {
+     //   let link = $(el).find('dd a').attr().href
+     //   let pic = $(el).find('dt a img').attr().src
+     //   let title = $(el).find('dd a').text().trim()
+     //   console.log(title)
+     //   console.log(link)
+     //   console.log(pic)
+     //   bookRec.push({
+     //     title: title,
+     //     link: link,
+     //     pic: pic
+     //   })
+     // })
     
     let obj = {
       booksExpress: booksExpress,
@@ -259,7 +259,7 @@ module.exports = function (superagent, cheerio, socket) {
       popularAuthors: popularAuthors,
       weeklyTop: weeklyTop,
       hotTags: hotTags,
-      bookRec: bookRec
+      // bookRec: bookRec
     }
     client.set('/api/douban/book', JSON.stringify(obj), function (err, data) {
       socket.emit('system', moment().format('YYYY-MM-DD h:mm:ss A'));

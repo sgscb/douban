@@ -98,7 +98,7 @@ app.get('*', (req, res, next) => {
   })
 
   renderStream.on('error', err => {
-    throw err
+    console.log(err);
   })
 })
 

@@ -1,34 +1,49 @@
-<template lang="jade">
-#index-sns
-  .wapper
-    a(href='#').homepage-top
-    index-more(title='热点内容', link='https://www.baidu.com/')
-    .side.index-side-w
-      .yike
-        a(target='_blank', :target='sns.yike.link |' | '')
-          img(style='width:265px', :src="sns.yike.pic" | '')
-      index-more(title='线上活动', link='https://www.baidu.com/')
-      .online
-        ul
-          li.size12(v-for='online in sns.onlines')
-            a.title.a-link(:href='online.link' | '') {{online.title}}
-            p.time {{online.time}}
-            p.num {{online.desc}}
-    .main
-      .albums
-        ul
-          li(v-for='album in sns.albums').size12
-            .pic
-              a(:href='album.link' | '')
-                img(:src='album.pic' | '', alt='')
-              a.a-link {{album.title}}
-              span.num {{album.num}}
-      .notes
-         ul
-          li.size12(v-for='note in sns.notes')
-            a.a-link(:href='note.link' | '') {{note.title}}
-            p.author(v-if='note.desc' | '') {{note.author}}
-            p.desc(v-if='note.desc' | '') {{note.desc}}
+<template >
+<div id="index-sns">
+  <div class="wapper"><a href="#" class="homepage-top"></a>
+    <index-more title="热点内容" link="https://www.baidu.com/"></index-more>
+    <div class="side index-side-w">
+      <div class="yike">
+        <a target="_blank" :target="sns.yike.link">
+          <img style="width:265px" :src="sns.yike.pic"/>
+        </a>
+      </div>
+      <index-more title="线上活动" link="https://www.baidu.com/"></index-more>
+      <div class="online">
+        <ul>
+          <li v-for="online in sns.onlines" class="size12">
+            <a :href="sns.link" class="title a-link" target='_blank'>{{online.title}}</a>
+            <p class="time">{{online.time}}</p>
+            <p class="num">{{online.desc}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <div class="albums">
+        <ul>
+          <li v-for="album in sns.albums" class="size12">
+            <div class="pic">
+              <a :href="album.link" target="_blank">
+                <img :src="album.pic" :alt="album.title"/>
+              </a>
+              <a class="a-link">{{album.title}}</a>
+              <span class="num">{{album.num}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="notes">
+        <ul>
+          <li v-for="note in sns.notes" class="size12"><a :href="note.link" class="a-link">{{note.title}}</a>
+            <p v-if="note.author" class="author">{{note.author}}</p>
+            <p v-if="note.author" class="desc">{{note.desc}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -41,12 +56,7 @@ export default {
     'index-more': IndexMore
   },
 
-  props: ['sns'],
-
-  data () {
-    return {
-    }
-  }
+  props: ['sns']
 }
 </script>
 
@@ -79,7 +89,7 @@ export default {
 }
 
 .albums ul {
-  margin: -10px 0 0 -10px;
+  margin: -10px 0 0 -50px;
 }
 
 .albums ul li {
@@ -89,7 +99,8 @@ export default {
   word-spacing: normal;
   width: 170px;
   vertical-align: top;
-  margin: 10px 0 0 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
           
 .pic {
