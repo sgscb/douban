@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   devtool: '#source-map',
   entry: {
-    app: './src/client-entry.js',
+    app: './fe/client-entry.js',
     vendor: ['vue', 'vue-router', 'vuex', 'firebase', 'lru-cache', 'es6-promise']
   },
   output: {

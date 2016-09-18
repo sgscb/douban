@@ -58,7 +58,7 @@ function createRenderer (bundle) {
 }
 
 app.use('/dist', express.static(resolve('./dist')))
-app.use(favicon(resolve('./src/assets/logo.png')))
+app.use(favicon(resolve('./fe/assets/logo.png')))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('*', (req, res, next) => {
@@ -102,4 +102,4 @@ app.get('*', (req, res, next) => {
   })
 })
 
-app.use(require('./config/routers'))
+app.use(require('./be/routers/index'))
