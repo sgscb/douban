@@ -5,8 +5,8 @@
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 更多»
     .slide-controls
       ol.slide-dots
-        li(v-for='$index in bookdata')
-          a(@click='carousel($index + 1)', class='dot $index')
+        li(v-for='$index in (bookdata.length - 2)')
+          a(@click='carousel($index)', class='dot $index')
       .slide-btns
         a(class='prev', @click='prev()') ‹
         a(class='next', @click='next()') ›
@@ -55,13 +55,13 @@ export default {
       console.log(index)
       var el = document.querySelector('.books-express .bd')
       if (index === 5) {
-        this.$store.dispatch('EXPRESS_BOOK_INDEX',1)
+        this.$store.dispatch('EXPRESS_BOOK_INDEX', 1)
         setTimeout(() => {
           el.style.transition = 'none'
           el.style.left = -605 + 'px'
         }, 1000)
       } else if (index === 0) {
-        this.$store.dispatch('EXPRESS_BOOK_INDEX',4)
+        this.$store.dispatch('EXPRESS_BOOK_INDEX', 4)
         setTimeout(() => {
           el.style.transition = 'none'
           el.style.left = -605 * 4 + 'px'
@@ -141,5 +141,5 @@ export default {
 .books-express .bd
   width (6 * bd_width = 605px)
   position relative
-  left -bd_width
+  left -605px
 </style>

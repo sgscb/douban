@@ -25,26 +25,35 @@ export default {
 
   methods: {
     mouseover: function (el, book) {
+      console.log(book)
       if (el.tagName === 'IMG') {
         el = el.parentNode.parentNode // 传递给父元素
       }
       var parentEl = el.parentNode.parentNode.parentNode.parentNode
       var left = el.offsetLeft // 第一个需要减去偏移
-      var top = el.offsetTop + parentEl.offsetTop - 120
+      var top = el.offsetTop + parentEl.offsetTop - 150
       if (this.index !== undefined) { // 如果为定义 说明是单页
         left -= 507 * this.index - 20 + (this.index - 1) * 99
       } else {
         left += 120 // 增加偏移
-        top -= parentEl.offsetTop + 50
+       
       }
       // console.log(book)
       if (book.abstract === undefined) {
         return
       }
-      // this.$dispatch('bubbleShow', left, top, book) // 传递给父组件
+      this.$store.dispatch('MODIFY_BOOK_BUBBLE',{
+        left: left,
+        top: top,
+        data: book
+      })
     },
     mouseout: function (el) {
-      // this.$dispatch('bubbleHidden')
+      this.$store.dispatch('MODIFY_BOOK_BUBBLE',{
+        left: 0,
+        top: 0,
+        data: {}
+      })
     }
   }
 }

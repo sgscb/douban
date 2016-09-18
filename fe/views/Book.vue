@@ -8,37 +8,37 @@
       a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
         img(src='../assets/book-top.jpg')
     .content <!-- 广告位2 -->
-      .bubble
+      .bubble <!-- 气泡 -->
         .small-bubble
-        p.title.size14 {{bubbleData.title}}
+        p.title.size14 {{bubbledata.title}}
         br
-        p.sub-title.size12 {{bubbleData.subTitle}}
+        p.sub-title.size12 {{bubbledata.author}} '/' {{bubbledata.year}} '/' {{bubbledata.publisher}}
         br
-        p.desc.size12 {{bubbleData.desc}}
+        p.desc.size12 {{bubbledata.abstract}}
       #book_home_middle_banner.section.no-bg <!-- 广告位2 -->
         a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
           img(src='../assets/book-middle.jpg')
-      express-books(:bookdata='bookdata.booksExpress') <!-- 组件 -->
-      popular-books(:bookdata='bookdata.popularBooks')
-      market-books(:bookdata='bookdata.marketBooks')
-      ebooks(:bookdata='bookdata.ebooks')
-      popular-authors(:authordata='bookdata.popularAuthors')
+      express-books(:bookdata='bookdata.booksExpress') <!-- 新书速递 -->
+      popular-books(:bookdata='bookdata.popularBooks') <!-- 最受关注图书榜 -->
+      market-books(:bookdata='bookdata.marketBooks') <!-- 豆瓣纸书 -->
+      ebooks(:bookdata='bookdata.ebooks') <!-- 电子书 -->
+      popular-authors(:authordata='bookdata.popularAuthors') <!-- 书评人 -->
       #book_home_bottom_banner.section.no-bg <!-- 广告位4 -->
         a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
           img(src='../assets/book-bottom.jpg')
-    .book-side
+    .book-side <!-- 侧边栏 -->
       #home-top-right <!-- 广告位5 -->
         a
           img(src='../assets/book-top-right.jpg')
-      hot-tags(:tagdata='bookdata.hotTags') <!-- 侧边栏组件-->
-      weekly-top(:bookdata='bookdata.weeklyTop')
-      book-rec(:bookdata='bookdata.bookRec')
+      hot-tags(:tagdata='bookdata.hotTags') <!-- 热门标签-->
+      weekly-top(:bookdata='bookdata.weeklyTop') <!-- 周榜 -->
+      book-rec(:bookdata='bookdata.bookRec') <!-- 推荐 -->
       .apply-links.section.size14
         ul
           li
             a 编辑申请
           li
-            a 出版社申请
+            a 出版社申请 <!-- 回复 -->
       .contact.size12
         .hd
             span 关注我们
@@ -49,7 +49,11 @@
                 a
                   img(src='https://img3.doubanio.com/f/book/dd2126e4349422cac36369e3ee8e098bf12f3e5e/pics/book/home_site.jpg')
               a 豆瓣小站
-      
+            li
+              .cover
+                a
+                  img(src='https://img3.doubanio.com/f/book/dd2126e4349422cac36369e3ee8e098bf12f3e5e/pics/book/home_site.jpg')
+              a 豆瓣小站 <!-- 联系我们 -->
   vfooter
 </template>
 
@@ -71,18 +75,6 @@ function fetchItem (store) {
 }
 
 export default {
-  computed: {
-    bookdata () {
-      
-      return this.$store.state.book
-    }
-  },
-  
-  preFetch: fetchItem,
-
-  beforeMount () {
-    fetchItem(this.$store)
-  },
 
   name: 'book',
 
@@ -100,45 +92,31 @@ export default {
     'book-rec': BookRec
   },
 
-  ready () {
-    // this.$http.get('douban/book/index').then((response) => {
-    //   if (response.status > 400) {
-    //     console.log('error')
-    //     return
-    //   }
-    //   // console.log(response.data.booksExpress)
-    //   let temp = response.data.booksExpress
-    //   temp.push(temp[0])
-    //   temp.unshift(temp[temp.length - 1])
-    //   response.data.booksExpress = temp
-    //   this.$set('bookdata', response.data)
-    // }, () => {
-    // })
+  computed: {
+    bookdata () {
+      return this.$store.state.book
+    },
+    bubbledata () {
+      if (typeof window !== 'undefined' && document.querySelector('.wapper .content .bubble')) {
+        var bubble = document.querySelector('.wapper .content .bubble')
+
+        bubble.style.display = this.$store.state.bookBubble.top ? 'block' : 'none'
+        bubble.style.marginTop = this.$store.state.bookBubble.top + 'px'
+        bubble.style.marginLeft = this .$store.state.bookBubble.left + 'px'
+      }
+      return this.$store.state.bookBubble.data
+    },
+  },
+  
+  preFetch: fetchItem,
+
+  beforeMount () {
+    fetchItem(this.$store)
   },
 
   data () {
     return {
-      bubbleData: {}
-    }
-  },
-
-  events: {
-    bubbleShow: function (x, y, book) {
-      this.$set('bubbleData', {
-        title: book.title,
-        subTitle: book.author + '/' + book.year + '/' + book.publisher,
-        desc: book.abstract
-      })
-      var bubble = document.querySelector('.wapper .content .bubble')
-      // console.log(bubble)
-      bubble.style.display = 'block'
-      bubble.style.marginTop = y + 'px'
-      bubble.style.marginLeft = x + 'px'
-    },
-
-    bubbleHidden: function () {
-      var bubble = document.querySelector('.wapper .content .bubble')
-      bubble.style.display = 'none'
+      bookBubble: {}
     }
   }
 }
@@ -191,7 +169,7 @@ export default {
   left -10px
   top 110px
 
-.small-bubblebefore
+.small-bubble:before // 黑线
   content ""
   display block /* reduce the damage in FF3.0 */
   position absolute
