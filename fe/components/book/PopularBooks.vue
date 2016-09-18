@@ -1,5 +1,5 @@
 <template lang="jade">
-.popular-books
+.popular-books.section
   .hd
     span 最受关注图书榜
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 虚构类»

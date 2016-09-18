@@ -73,6 +73,7 @@ function fetchItem (store) {
 export default {
   computed: {
     bookdata () {
+      
       return this.$store.state.book
     }
   },

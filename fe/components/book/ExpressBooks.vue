@@ -12,7 +12,7 @@
         a(class='next', @click='next()') ›
   .bd.row-5
     ul.carousel(v-for='(book, $index) in bookdata', track-by="$index")
-      book-row-5(:page='page', :bookdata='book')
+      book-row-5(:index='index', :bookdata='book')
 </template>
 
 <script>
@@ -26,38 +26,42 @@ export default {
   },
 
   props: ['bookdata'],
-  `1`1` 
+
+  computed: {
+    index () {
+      return this.$store.state.expressBookIndex
+    }
+  },
+
   data () {
     return {
-      page: 1,
       lastVendor: 0
     }
   },
 
   methods: {
     prev: function () {
-      this.$set('page', this.page - 1)
-      this.carousel(this.page)
+      this.$store.dispatch('EXPRESS_BOOK_INDEX',this.index - 1)
+      this.carousel(this.index)
     },
 
     next: function () {
-      this.$set('page', this.page + 1)
-      this.carousel(this.page)
+      this.$store.dispatch('EXPRESS_BOOK_INDEX',this.index + 1)
+      this.carousel(this.index)
     },
 
     // 无限滚动 利用数据给head和tail添加相同数据 到边界后定时无动画说偷偷刷新
     carousel: function (index) {
-      // console.log(index)
-      this.$set('page', index)
+      console.log(index)
       var el = document.querySelector('.books-express .bd')
       if (index === 5) {
-        this.$set('page', 1)
+        this.$store.dispatch('EXPRESS_BOOK_INDEX',1)
         setTimeout(() => {
           el.style.transition = 'none'
           el.style.left = -605 + 'px'
         }, 1000)
       } else if (index === 0) {
-        this.$set('page', 4)
+        this.$store.dispatch('EXPRESS_BOOK_INDEX',4)
         setTimeout(() => {
           el.style.transition = 'none'
           el.style.left = -605 * 4 + 'px'

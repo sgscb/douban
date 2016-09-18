@@ -4,7 +4,7 @@
       .cover(@mouseover='mouseover($event.target, book)', @mouseout='mouseout($event.target)')
         a(:href='book.link', target='_blank')
           img(:src='book.pic', :alt='book.title')
-      .intervenor-info(v-if='page')
+      .intervenor-info(v-if='index')
         img(src='https://img3.doubanio.com/f/book/ef040178fab1770d60e3f2f12ba4c7aa70714396/pics/book/partner/jd_recommend.png')
         span.size13 推荐
       a.title.size13 {{book.title}}
@@ -21,7 +21,7 @@ export default {
     }
   },
 
-  props: ['page', 'bookdata'],
+  props: ['index', 'bookdata'],
 
   methods: {
     mouseover: function (el, book) {
@@ -31,8 +31,8 @@ export default {
       var parentEl = el.parentNode.parentNode.parentNode.parentNode
       var left = el.offsetLeft // 第一个需要减去偏移
       var top = el.offsetTop + parentEl.offsetTop - 120
-      if (this.page !== undefined) { // 如果为定义 说明是单页
-        left -= 507 * this.page - 20 + (this.page - 1) * 99
+      if (this.index !== undefined) { // 如果为定义 说明是单页
+        left -= 507 * this.index - 20 + (this.index - 1) * 99
       } else {
         left += 120 // 增加偏移
         top -= parentEl.offsetTop + 50

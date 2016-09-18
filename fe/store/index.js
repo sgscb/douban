@@ -7,14 +7,17 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     index: _index,
-    book: _book
+    book: _book,
+    expressBookIndex: 0,
   },
 
   actions: {
     FETCH_ITEMS: ({ commit, state },  url) => {
-      console.log(url);
       return fetchItem(url).then((items) => commit('SET_ITEMS', { items, url}))
     },
+    EXPRESS_BOOK_INDEX: ({commit, state}, index) => {
+      commit('SET_EXPRESS_BOOK', index)
+    }
   },
 
   mutations: {
@@ -25,10 +28,14 @@ const store = new Vuex.Store({
         }
         break
         case '/book': {
+          // 需要复制两个参数
           state.book = items
         }
         break
       }
+    },
+    SET_EXPRESS_BOOK: (state, index) => {
+      state.expressBookIndex = index
     }
   },
 
