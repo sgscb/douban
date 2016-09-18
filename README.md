@@ -4,6 +4,11 @@
 
 > vue.js(2.0 rc-5), vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, mongoose(3.0+), redis
 
+## 注意
+
+1. 请确认 `redis` 是 `start` 状态
+2. 在浏览器中访问 http://127.0.0.1:8080/api/spider 启动爬虫
+
 ## 记录
 1. 在2.0中 `Vue.set(store.item, item)` 不会触发更新dom, `store.item = item` 才可以
 2. 由于 `server side render` 的原因, 不能使用 `vue-resource` 了, 改用 `superagent` 发请求了
