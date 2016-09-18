@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import IndexSidenav from './IndexSidenav.vue'
+import IndexSideNav from './IndexSideNav.vue'
 import IndexMore from './IndexMore.vue'
 
 export default {
@@ -35,7 +35,7 @@ export default {
   name: 'index-book',
 
   components: {
-    IndexSidenav,
+    IndexSideNav,
     IndexMore
   },
 

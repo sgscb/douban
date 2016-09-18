@@ -5,4 +5,4 @@ services:
   - mongodb
   - redis
 script: 
-  - npm run dev
+  - npm run build
