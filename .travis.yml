@@ -1,0 +1,8 @@
+
+language: node_js
+node_js: "6.1"
+services:
+  - mongodb
+  - redis
+script: 
+  - npm run dev

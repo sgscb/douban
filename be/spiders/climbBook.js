@@ -1,6 +1,6 @@
 let moment = require('moment')
 let redis = require('redis')
-let tools = require('../tools/imgTools')
+let tools = require('../tools/img')
 let client = redis.createClient()
 
 // 爬取首页数据
