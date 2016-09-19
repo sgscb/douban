@@ -63,9 +63,17 @@
   .clearfix
   .gtleft
     ul
-      li(v-for='n in 3')
+      li
         img(src='https://img3.doubanio.com/f/shire/5bbf02b7b5ec12b23e214a580b6f9e481108488c/pics/add-review.gif')
         a(href='33') 写笔记
+      li
+        img(src='https://img3.doubanio.com/f/shire/5bbf02b7b5ec12b23e214a580b6f9e481108488c/pics/add-review.gif')
+        a(href='33') 写书评
+      li
+        img(src='https://img3.doubanio.com/pics/add-cart.gif')
+        a(href='33') 加入购书单
+      li
+        a 分享到
   a.rec 推荐
 </template>
 
@@ -78,7 +86,7 @@ export default {
     return {
       hoverImg: 'https://img3.doubanio.com/f/shire/2520c01967207a1735171056ec588c8c1257e5f8/pics/rating_icons/star_hollow_hover.png',
       onMouseOver: 'https://img3.doubanio.com/f/shire/5a2327c04c0c231bced131ddf3f4467eb80c1c86/pics/rating_icons/star_onmouseover.png',
-      level: 0
+      level: 0,
     }
   },
 
