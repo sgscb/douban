@@ -58,8 +58,8 @@
                 img(src='https://img3.doubanio.com/lpic/s28897671.jpg' alt='')
               a.title 密林中
               span.price 19.00元
-        vcomment
         vsortcmment
+        vcomment
     .side 1
   vfooter
 </template>

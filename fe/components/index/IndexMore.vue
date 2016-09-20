@@ -33,7 +33,7 @@ export default {
   height: 50px;
   position: relative;
   display: block;
-  top: 10px;
+  margin-top: 10px;
 }
 
 h2 {
