@@ -1,6 +1,6 @@
 
 <template lang="jade">
-.comment.size12
+.sort-comment.size12
   vmore(title='短评' link='' subTitle='全部193条')
   .types
     span.type(v-on:click="changeIndex($index)"
@@ -9,7 +9,7 @@
   ul(v-for='(n, $index) in 3' v-show='$index == activeIndex')
     li(v-for='n in 10')
       a.name 23333
-      span.star
+      span.star.star1
       span.time 2016-07-20
       a.useful 有用
       span.num 19
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.comment
+.sort-comment
   .types
     padding-bottom 10px
     border-bottom 1px dashed lightgray
@@ -67,10 +67,6 @@ export default {
         float left
       .star
         float left
-        width 75px
-        height 15px
-        background-image url('../../assets/star.png')
-        background-position 0 -30px
       .time
         float left
       .content

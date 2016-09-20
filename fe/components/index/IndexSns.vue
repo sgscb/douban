@@ -78,6 +78,7 @@ export default {
   top: -10px;
   width: calc(100% - 270px);
   min-height: 400px;
+  margin-top: 10px;
 }
 
 .albums {
@@ -85,6 +86,7 @@ export default {
   width: 370px;
   font-size: 0;
   letter-spacing: -0.31em;
+
 }
 
 .albums ul {
@@ -130,13 +132,11 @@ export default {
   float: right;
   width: 265px;
   margin-left: 30px;
-  top: -35px;
   height: 200px;
 }
     
 .side ul {
   position: relative;
-  top: -15px;
 }
 
 .side li {

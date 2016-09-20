@@ -30,7 +30,7 @@ export default {
 <style lang="css" scoped>
 .index-more {
   width: 100%;
-  height: 50px;
+  height: 30px;
   position: relative;
   display: block;
   margin-top: 10px;

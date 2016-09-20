@@ -1,24 +1,24 @@
-<template>
-<div class="weekly-top section">
-  <div class="hd"><span>畅销图书榜</span></div>
-  <div class="bd size12">
-    <ul class="nav-vendor">
-      <li @click="vendor(0)" class="li-on"><img src="../../assets/vendor-jd.png"/><span>京东</span></li>
-      <li @click="vendor(1)"><img src="../../assets/vendor-amazon.png"/><span>亚马逊</span></li>
-      <li @click="vendor(2)"><img src="../../assets/vendor-dangdang.png"/><span>当当</span></li>
-    </ul>
-    <ul v-for="(books, $index) in bookdata" v-show="!$index" class="list-ranking">
-      <li v-for="(book, $index) in books">
-      <span class="index">{{$index}}.</span>
-        <div class="info">
-          <a :href="book.link" target="_blank" class="name line1">{{book.title}}</a>
-          <p class="author line1">{{book.author}}</p>
-        </div>
-         <a :href="book.link" target="_blank" class="buy-btn"> 去购买</a>
-      </li>
-    </ul>
-  </div>
-</div>
+<template lang="jade">
+.weekly-top.section
+  .hd
+    span 畅销图书榜
+  .bd.size12
+    ul.nav-vendor
+      li(
+      v-for='(vendor, $index) in vendors'
+      @click='chaneIndex($index)'
+      v-bind:class='{active: activeIndex == $index}')
+        img(v-bind='{src: activeIndex == $index ? vendor.hoverPic : vendor.pic}')
+        span {{vendor.name}}
+    ul.list-ranking(
+    v-for='(books, $index) in bookdata'
+    v-show='$index==activeIndex')
+      li(v-for='(book, $index) in books')
+        span.index {{$index}}.
+        .info
+          a.name.line1(:href='book.link', target='_blank') {{book.title}}
+          p.author.line1 {{book.author}}
+        a.buy-btn(:href='book.link', target='_blank')  去购买
 </template>
 
 <script>
@@ -30,26 +30,27 @@ export default {
 
   data () {
     return {
-      lastVendor: 0
+      activeIndex: 0,
+      vendors:[{
+        name: '京东',
+        pic: 'https://img3.doubanio.com/f/book/1a000e2b266b7d0e7c6c729591cab99692c04153/pics/book/partner/jd_chart.png',
+        hoverPic: 'https://img3.doubanio.com/f/book/7fd9bf017a2b6c0349981f25700e2b71c12df7d0/pics/book/partner/jd_chart_hover.png'
+      },
+      {
+        name: '亚马逊',
+        pic: 'https://img3.doubanio.com/f/book/a89c8398b6cf28ef20edfe1b069ee72917e2dd54/pics/book/partner/amazon_chart.png',
+        hoverPic: 'https://img3.doubanio.com/f/book/d6c95e1ad2d0963f912a64fcb51cfa85137462c6/pics/book/partner/amazon_chart_hover.png'
+      },
+      {
+        name: '当当',
+        pic: 'https://img3.doubanio.com/f/book/31b437b71ced2d15e1e110d6be26b070da8c0d4a/pics/book/partner/dangdang_chart.png',
+        hoverPic: 'https://img3.doubanio.com/f/book/7d8c0787ecede53ce754df32380011a66b610496/pics/book/partner/dangdang_chart_hover.png'
+      }]
     }
   },
-
   methods: {
-    vendor: function (index) {
-      console.log(index)
-      let els = document.querySelectorAll('.nav-vendor li')
-      els[this.lastVendor].className = null
-      els[index].className = 'li-on'
-      let uls = document.querySelectorAll('.weekly-top .bd .list-ranking')
-      for (let i = 0; i < uls.length; i++) {
-        let el = uls[i]
-        if (i === index) {
-          el.style.display = 'block'
-        } else {
-          el.style.display = 'none'
-        }
-      }
-      this.lastVendor = index
+    chaneIndex: function (index) {
+      this.activeIndex = index
     }
   }
 }
@@ -74,7 +75,7 @@ export default {
     span
       line-height 18px
 
-.weekly-top .nav-vendor .li-on, .weekly-top .nav-vendor li:hover
+.weekly-top .nav-vendor .active, .weekly-top .nav-vendor li:hover
   color #fff
   background #9b7c5e
 

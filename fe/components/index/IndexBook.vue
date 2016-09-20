@@ -59,7 +59,6 @@ export default {
 
 .mod ul
   position relative
-  top -10px
 
 .main .mod ul li
   position relative
@@ -119,12 +118,9 @@ export default {
   a
     color lightgray
     cursor auto
-
-
   a:hover
     background-color:inherit
     color lightgray
-
 
 .side .cate-item
   display inline-block
