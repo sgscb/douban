@@ -4,7 +4,5 @@ node_js: "6.1"
 services:
   - mongodb
   - redis
-script: 
-  - npm uninstall webpack --save-dev
-  - npm install webpack@2.1.0-beta.22 --save-dev
+script:
   - npm run build
