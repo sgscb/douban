@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/jiakeqi/douban.svg?branch=douban)](https://travis-ci.org/jiakeqi/douban)
 > Use Vue.js 2.0, 
 
-> vue.js(2.0 rc-5), vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, mongoose(3.0+), redis
+> vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, mongoose(3.0+), redis
 
 ## Build Setup
 
