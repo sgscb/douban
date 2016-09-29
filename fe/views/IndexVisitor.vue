@@ -17,7 +17,7 @@ import IndexBook from '../components/index/IndexBook.vue'
 
 
 function fetchItem (store) {
-  return store.dispatch('FETCH_ITEMS', '/index')
+  return store.dispatch('FETCH_ITEMS', '/index/vistor')
 }
 
 export default {

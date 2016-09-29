@@ -1,13 +1,13 @@
-var os = require('os')
-var IPv4 = ''
-var fs= require('fs')
-var dir = './public/images/'
-
+const os = require('os')
+const fs = require('fs')
+const superagent = require('superagent')
+let dir = './public/imgs/'
+let IPv4 = ''
 // 获取ip
-var ifaces = os.networkInterfaces()
+let ifaces = os.networkInterfaces()
 
 Object.keys(ifaces).forEach(function (ifname) {
-  var alias = 0
+  let alias = 0
 
   ifaces[ifname].forEach(function (iface) {
     if ('IPv4' !== iface.family || iface.internal !== false) {
@@ -31,17 +31,17 @@ Object.keys(ifaces).forEach(function (ifname) {
 
 
 // 把豆瓣的图片保存到本地
-module.exports = function ($, superagent) {
+module.exports = function ($) {
   $('img').each(function(index, el) {
-      var url = $(el).attr().src
+      let url = $(el).attr().src
       if (url.indexOf('blank.gif') != -1 && $(el).attr()['data-origin']) {
          url = $(el).attr()['data-origin']
       } 
-      var newUrl = url.substring(8, url.length).replace(/\//g,'')
+      let newUrl = url.substring(8, url.length).replace(/\//g,'')
       if (newUrl.indexOf('?v=') != -1) {
         newUrl = newUrl.substring(0, newUrl.indexOf('?v='))
       }
-      $(el).attr('src', 'http://' + IPv4 + ':8080' + '/images/' + newUrl)
+      $(el).attr('src', 'http://' + IPv4 + ':8080' + '/' + newUrl)
       superagent(url).pipe(fs.createWriteStream(dir + newUrl))
     })
 }

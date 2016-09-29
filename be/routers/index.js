@@ -1,43 +1,39 @@
 const { io } = require('../../server.js');
 const express = require('express')
-const superagent = require('superagent')
-const cheerio = require('cheerio')
-const moment = require('moment')
 const redis = require('redis')
 const client = redis.createClient()
-const climbIndex = require('../spiders/climbIndex')
-const climbBook = require('../spiders/climbBook')
 const router = express.Router()
+const request = require('../spiders/request')
 
-router.get('/api/spider', (req, res) => {
-  climbIndex(superagent, cheerio, io)
-  climbBook(superagent, cheerio, io)
-  res.send('已经开始爬取')
-})
-
-// 豆瓣首页
-router.get('/api/douban/index', (req, res) => {
-  client.get('/api/douban/index', (err, data) => {
+router.get('*', (req, res, next) => {
+  client.get('/api' + req.url, (err, data) => {
     if (err) {
       res.send(err)
       return
     }
-    !data && climbIndex(superagent, cheerio, io)
     res.send(JSON.parse(data))
+    next();
   })
 })
 
-// 豆瓣读书
-router.get('/api/douban/book', (req, res) => {
-  client.get('/api/douban/book', (err, data) => {
-    if (err) {
-      res.send(err)
-      return
-    }
-    !data && climbBook(superagent, cheerio, io)
-    res.send(JSON.parse(data))
-  })
+router.get('/spider', (req, res) => {
+  request()
 })
+
+// 豆瓣首页(未登录)
+router.get('/index/vistor', (req, res) => {
+})
+
+router.get('/book', (req, res) => {
+})
+
+router.get('/subject/:id', (req, res) => {
+})
+
+router.get('/tags', (req, res) => {
+})
+
+
 
 // websockets连接建立
 io.sockets.on('connect', (socket) => {

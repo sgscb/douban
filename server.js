@@ -102,4 +102,4 @@ app.get('*', (req, res, next) => {
   })
 })
 
-app.use(require('./be/routers/index'))
+app.use('/api', require('./be/routers/index'))
