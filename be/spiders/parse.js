@@ -13,8 +13,39 @@ module.exports = ($, url) => {
       _parse_book_index($, '/api/book')
     }
     break
+    case 'https://book.douban.com/tag/': {
+      _parse_book_tags($, '/api/tags')
+    }
+    break
   }
 }
+
+let _parse_book_tags = ($, key) => {
+  let names = [];
+  $('.tag-title-wrapper').each(function(index, el) {
+    names.push(el.attribs.name);
+  });
+  let tags = [];
+  $('.tagCol').each(function(parentIndex, parentEl) {
+    let tempArr = [];
+    $(parentEl).find('td').each(function(index, el) {
+      let title = $(el).children('a').text()
+      let num = $(el).children('b').text()
+      tempArr.push({
+        tag: names[parentIndex],
+        title: title,
+        num: num
+      })
+    })
+    tags.push(tempArr)
+  })
+  client.set(key, JSON.stringify(tags), function (err, data) {
+    if (err) {
+      console.log(err.ReplyError)
+    }
+  })
+}
+
 let _parse_book_index = ($, key) => {
   let booksExpress = []
     $('#wrapper #content .article .books-express .bd .carousel .slide-list ul').each(function(index, parentEl) {

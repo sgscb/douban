@@ -2,7 +2,7 @@
 #vnav
   .nav-primary
     .wapper
-      a
+      a(href='/book')
         .nav-logo
       .nav-search
         form

@@ -43,7 +43,7 @@ export default {
           title: '豆瓣'
         },
         {
-          link: 'https://book.douban.com',
+          link: '/book',
           class: 'lnk-book',
           title: '读书'
         },

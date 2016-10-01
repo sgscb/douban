@@ -2,7 +2,7 @@
 .hot-tags.section
   .hd
     span 热门标签
-    a(href='https://book.douban.com/latest?icn=index-latestbook-all') 所有热门标签»
+    a(href='/tags') 所有热门标签»
   .bd
     ul
       li(v-for='tags in tagdata')

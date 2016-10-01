@@ -10,6 +10,7 @@ const parse = require('./parse')
 let mainUrls = [
 'https://book.douban.com/',
 'https://douban.com/',
+'https://book.douban.com/tag/'
 ]
 
 // 爬取数据

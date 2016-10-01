@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {fetchItem} from './api.js'
-import {_index, _book} from './mock.js'
+import {_index, _book, _tags} from './mock.js'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
     index: _index,
     book: _book,
+    tags: _tags,
     expressBookIndex: 1,
     bookBubble:{
       left: '',
@@ -39,6 +40,10 @@ const store = new Vuex.Store({
       switch (url) {
         case '/index': {
           state.index = items
+        }
+        break
+        case '/tags': {
+          state.tags = items
         }
         break
         case '/book': {
