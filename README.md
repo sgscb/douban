@@ -7,6 +7,11 @@
 ## Build Setup
 
 ``` bash
+
+#redis
+
+redis-server &
+
 # install dependencies
 npm install
 
@@ -22,13 +27,17 @@ npm run build
 
 1. 请确认 `redis` 是 `start` 状态
 2. 在浏览器中访问 http://127.0.0.1:8080/api/spider 启动爬虫
-3. 目前只设置了三个页面
+3. 目前完成的界面: 首页, 读书首页, 标签页, 列表页, 详情页
 
    http://127.0.0.1:8080/
 
    http://127.0.0.1:8080/book
 
-   http://127.0.0.1:8080/subject/1
+   http://127.0.0.1:8080/tags
+    
+   http://127.0.0.1:8080/tag/javascript
+   
+   http://127.0.0.1:8080/subject/3332698
 
 ## 记录
 1. 在2.0中 `Vue.set(store.item, item)` 不会触发更新dom, `store.item = item` 才可以

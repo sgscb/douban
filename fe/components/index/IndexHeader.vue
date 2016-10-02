@@ -26,7 +26,7 @@ export default {
     return {
       navLinks: [
         {
-          link: 'https://book.douban.com',
+          link: '/book',
           class: 'lnk-book'
         },
         {

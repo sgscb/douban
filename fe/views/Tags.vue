@@ -15,14 +15,14 @@
           div.class {{items[0].tag}}  · · · · · ·
           template(v-for='(item, $index) in items')
             li
-              a.title {{item.title}}
+              a.title(:href='createHref(item.title)') {{item.title}}
               span.num {{item.num}}
             .clearfix(v-if='!(($index+1)%4)')
       .tags(v-if='activeIndex === 1')
         ul
           template(v-for='(item, $index) in tags')
             li
-              a.title {{item.title}}
+              a.title(:href='createHref(item.title)') {{item.title}}
               span.num {{item.num}}
             .clearfix(v-if='!(($index+1)%4)')
 
@@ -79,6 +79,9 @@ export default {
   methods: {
     changeIndex: function(item) {
       this.activeIndex = item
+    },
+    createHref: function (title) {
+      return '/tag/' + title
     }
   }
 }
@@ -105,11 +108,10 @@ export default {
         cursor text
     .tags
       ul
-        padding 10px 0px
         .class
           font-size 15px
-          margin-bottom 10px
           clear both
+          padding 20px 0px
         li
           line-height 22px
           float left

@@ -27,7 +27,7 @@
         a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
           img(src='../assets/book-bottom.jpg')
     .book-side <!-- 侧边栏 -->
-      #home-top-right <!-- 广告位5 -->
+      #home-top-right.cover <!-- 广告位5 -->
         a
           img(src='../assets/book-top-right.jpg')
       hot-tags(:tagdata='bookdata.hotTags') <!-- 热门标签-->

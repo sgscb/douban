@@ -36,5 +36,37 @@ export function fetchItem (url) {
   return fetch(url)
 }
 
+export function fetchSearchItems (type) {
+  let url = encodeURI('https://api.douban.com/v2/book/search?q=' + type)
+  return new Promise((resolve, reject) => {
+    superagent
+   .get(url)
+   .end((err,response) => {
+      if (err) {
+        console.log('error!' + url);
+        return
+      }
+      console.log('success!' + url);
+      resolve(JSON.parse(response.text))
+    })
+ })
+}
+
+export function fetchSearchItem (id) {
+  let url = encodeURI('https://api.douban.com/v2/book/' + id)
+  return new Promise((resolve, reject) => {
+    superagent
+   .get(url)
+   .end((err,response) => {
+      if (err) {
+        console.log('error!' + url);
+        return
+      }
+      console.log('success!' + url);
+      resolve(JSON.parse(response.text))
+    })
+ })
+}
+
 
 

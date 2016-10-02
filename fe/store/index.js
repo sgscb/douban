@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {fetchItem} from './api.js'
+import {fetchItem, fetchSearchItems, fetchSearchItem} from './api.js'
 import {_index, _book, _tags} from './mock.js'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    index: _index,
-    book: _book,
-    tags: _tags,
-    expressBookIndex: 1,
-    bookBubble:{
+    index: _index, // 首页数据
+    book: _book, // 读书首页数据
+    tags: _tags, // 标签页面数据
+    items: [], // items
+    item: {},
+    expressBookIndex: 1, // 新书速递索引
+    bookBubble:{ // 气泡
       left: '',
       top: '',
       data: {
@@ -27,6 +29,12 @@ const store = new Vuex.Store({
     FETCH_ITEMS: ({ commit, state },  url) => {
       return fetchItem(url).then((items) => commit('SET_ITEMS', { items, url}))
     },
+    FETCH_LIST_DATA: ({commit, state}, type) => {
+      return fetchSearchItems(type).then((items) =>  commit('SET_LIST_DATA', items))
+    },
+    FETCH_ITEM_DATA: ({commit, state}, id) => {
+      return fetchSearchItem(id).then((item) =>  commit('SET_ITEM_DATA', item))
+    },
     EXPRESS_BOOK_INDEX: ({commit, state}, index) => {
       commit('SET_EXPRESS_BOOK', index)
     },
@@ -38,7 +46,7 @@ const store = new Vuex.Store({
   mutations: {
     SET_ITEMS: (state, { items, url}) => {
       switch (url) {
-        case '/index': {
+        case '/index/vistor': {
           state.index = items
         }
         break
@@ -62,6 +70,12 @@ const store = new Vuex.Store({
     },
     SET_BOOK_BUBBLE: (state, data) => {
       state.bookBubble = data
+    },
+    SET_LIST_DATA: (state, data) => {
+      state.items = data
+    },
+    SET_ITEM_DATA: (state, data) => {
+      state.item = data
     }
   },
 

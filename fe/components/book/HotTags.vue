@@ -8,7 +8,7 @@
       li(v-for='tags in tagdata')
         ul.section
           li(v-for='tag in tags')
-            a(:href='tag.link', target='_blank') {{tag.title}}
+            a(:href='createHref(tag.title)', target='_blank') {{tag.title}}
 </template>
 
 <script>
@@ -21,6 +21,11 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods: {
+    createHref:  function (title){
+      return '/tag/' + title
     }
   }
 }

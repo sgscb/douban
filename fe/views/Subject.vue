@@ -4,15 +4,15 @@
   vnav
   article.wapper
     .content
-      h1 机器学习
-      vinfo
+      h1 {{item.title}}
+      vinfo()
       .related-info
         .contentDesc
           vmore(title='内容简介')
-          span 两个生于八十年代的年轻人，遭受着缺失父辈之爱的痛苦。他们追寻上一代的足迹，循着线索不断走向秘密的核心，最终发现了一个庞大而不堪的真相。1967年雨夜，废弃的德军建造的水塔内究竟发生了什么？一根铁钉如何造就了两个家族截然不同的命运？荣耀的背后又隐藏着怎样的悲剧？
+          span {{item.summary}}
         .authorDesc
           vmore(title='作者简介')
-          span 张悦然，14岁时开始发表作品，并引起巨大反响。至今已出版小说作品有：《葵花走失在1890》、《十爱》、《樱桃之远》、《水仙已乘鲤鱼去》、《誓鸟》、《红鞋》、《是你来检阅我的忧伤了吗》、《昼若夜房间》、《月圆之夜及其他》，主编主题书《鲤》系列等。现为中国人民大学文学院讲师。
+          span {{item.author_intro}}
         .dict
           vmore(title='目录')
           span 第一章
@@ -27,8 +27,8 @@
             br
             | 后 记
         .user-tag
-          vmore(title='豆瓣成员常用的标签(共83个)')
-          a(v-for='n in 7') 小说
+          vmore(title='豆瓣成员常用的标签(*)个')
+          a(v-for='tag in item.tags') {{tag.name}}
         .subject-show
           vmore(title='丛书信息')
           span
@@ -39,8 +39,9 @@
           span 支持 Web、iPhone、iPad、Android 阅读器
           ul
             li(v-for='n in 5')
-              a.cover(href='')
-                img(src='https://img3.doubanio.com/lpic/s28897671.jpg' alt='')
+              .cover
+                a.cover(href='')
+                  img(src='https://img3.doubanio.com/lpic/s28897671.jpg' alt='')
               a.title 密林中
               span.price 19.00元
         .same-like
@@ -48,13 +49,14 @@
           span 支持 Web、iPhone、iPad、Android 阅读器
           ul
             li(v-for='n in 10')
-              a.cover(href='')
-                img(src='https://img3.doubanio.com/lpic/s28897671.jpg' alt='')
+              .cover
+                a.cover(href='')
+                  img(src='https://img3.doubanio.com/lpic/s28897671.jpg' alt='')
               a.title 密林中
               span.price 19.00元
         vsortcmment
         vcomment
-    .side 1
+    .side 
   vfooter
 </template>
 
@@ -66,8 +68,24 @@ import Info from '../components/subject/Info.vue'
 import SortComment from '../components/subject/SortComment.vue'
 import Comment from '../components/subject/Comment.vue'
 import More from '../components/index/IndexMore.vue'
-export default {
+function fetchItem (store, _this) {
+  if (_this.history !== undefined) {
+    return store.dispatch('FETCH_ITEM_DATA', _this.history.current.params.id)
+  }
+}
 
+export default {
+  computed: {
+    item () {
+      return this.$store.state.item
+    }
+  },
+  
+  preFetch: fetchItem,
+
+  beforeMount () {
+    fetchItem(this.$store, this)
+  },
   name: 'book-subject',
 
   components: {

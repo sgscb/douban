@@ -1,35 +1,35 @@
 <template lang="jade">
 .info.size12
   .cover
-    a
-      img(src='https://img3.doubanio.com/lpic/s28897671.jpg' alt='')
+    a(:href='info.alt')
+      img(:src='info.image')
   .more
     span
       span 作者：
-      a(href='http://1.com/') 233
+      a(href='http://1.com/') {{info.author}}
     br
-    span 出版社: 人民文学出版社
+    span 出版社: {{info.publisher}}
     br
-    span 出版年: 2016-8-1
+    span 出版年: {{info.pubdate}}
     br
-    span 页数: 424
+    span 页数: {{info.pages}}
     br
-    span 定价: 43.00元
+    span 定价: {{info.price}}
     br
-    span 装帧: 平装
+    span 装帧: {{info.binding}}
     br
     span
       span 丛书:
       a(href='http://1.com/') 张悦然作品集
     br
-    span ISBN: 9787020118021
+    span ISBN: 
   .interest
     .rating_logo 豆瓣评分
     .rating_self
-      strong 8.0
+      strong {{info.rating.average}}
       .rating_right
         .star
-        a.num(href='http://1.com/') 233人评价
+        a.num(href='http://1.com/') {{info.rating.numRaters}}人评价
     .clearfix
     span.starstop 5星
     .power(style='width:52px')
@@ -87,6 +87,7 @@ export default {
       hoverImg: 'https://img3.doubanio.com/f/shire/2520c01967207a1735171056ec588c8c1257e5f8/pics/rating_icons/star_hollow_hover.png',
       onMouseOver: 'https://img3.doubanio.com/f/shire/5a2327c04c0c231bced131ddf3f4467eb80c1c86/pics/rating_icons/star_onmouseover.png',
       level: 0,
+      info: this.$store.state.item
     }
   },
 

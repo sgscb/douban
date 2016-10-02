@@ -23,13 +23,13 @@
       <div class="albums">
         <ul>
           <li v-for="album in sns.albums" class="size12">
-            <div class="pic">
+            <div class="pic cover">
               <a :href="album.link" target="_blank">
                 <img :src="album.pic" :alt="album.title"/>
               </a>
-              <a class="a-link">{{album.title}}</a>
-              <span class="num">{{album.num}}</span>
             </div>
+            <a class="a-link">{{album.title}}</a>
+            <span class="num">{{album.num}}</span>
           </li>
         </ul>
       </div>
