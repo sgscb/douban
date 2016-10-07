@@ -1,4 +1,4 @@
-# 模仿豆瓣前端
+# 模仿豆瓣前端 live demo http://jk77.me:8080 
 [![Build Status](https://travis-ci.org/jiakeqi/douban.svg?branch=douban)](https://travis-ci.org/jiakeqi/douban)
 > Use Vue.js 2.0, 
 
