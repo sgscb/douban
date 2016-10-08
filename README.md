@@ -5,7 +5,7 @@
 > vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
 ## live demo 
-http://jk77.me:8080 
+http://jk77.me
 
 ## Build
 
