@@ -1,8 +1,8 @@
 import LRU from 'lru-cache'
 import Vue from 'vue'
 const superagent = require('superagent')
-const {host} = require('../../config')
-const apiHost = host + '/api'
+const {host} = require('../../config.js')
+const apiHost = host() + '/api'
 // const inBrowser = typeof window !== 'undefined'
 // When using bundleRenderer, the server-side application code runs in a new
 // context for each request. To allow caching across multiple requests, we need
@@ -19,6 +19,7 @@ const apiHost = host + '/api'
 // }
 
 function fetch (url) {
+  console.log(apiHost + url)
   return new Promise((resolve, reject) => {
     superagent
    .get(apiHost + url)
