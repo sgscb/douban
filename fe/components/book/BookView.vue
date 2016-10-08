@@ -5,7 +5,7 @@
         a(:href='book.link', target='_blank')
           img(:src='book.pic', :alt='book.title')
       .intervenor-info(v-if='index')
-        img(src='https://img3.doubanio.com/f/book/ef040178fab1770d60e3f2f12ba4c7aa70714396/pics/book/partner/jd_recommend.png')
+        img(src='/jd_recommend.png')
         span.size13 推荐
       a.title.size13 {{book.title}}
       p.author.size12 {{book.price || book.author}} 

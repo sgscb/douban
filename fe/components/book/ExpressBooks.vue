@@ -1,5 +1,5 @@
 <template lang="jade">
-.books-express.section
+#books-express.section
   .hd
     span 新书速递
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 更多»
@@ -94,52 +94,46 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 
 @import "../../assets/book.styl"
 
-.books-express
+#books-express
   overflow hidden
+  .bd
+    width (6 * bd_width = 605px)
+    position relative
+    left -605px
+  .slide-controls
+    float right
+    .slide-dots
+      float left
+      position relative
+      margin-top -1px
+      li
+        display inline
+      a
+        width 5px
+        height 5px
+        display inline-block
+        zoom 1
+        margin-left 8px
+        border-radius 5px
+        background #dfdfdf
+      li:first-child a
+        background #9b9a8f 
 
-.slide-controls
-  float right
+  .slide-controls .slide-btns
+    float right
 
-.slide-controls .slide-dots li
-  display inline
-
-.slide-controls .slide-dots a
-  width 5px
-  height 5px
-  display inline-block
-  zoom 1
-  margin-left 8px
-  border-radius 5px
-  background #dfdfdf
-
-.slide-controls .slide-dots li:first-child a
-  background #9b9a8f
-
-.slide-controls .slide-dots
-  float left
-  position relative
-  margin-top -1px
-
-.slide-controls .slide-btns
-  float right
-
-.slide-controls .slide-btns a
-  display inline-block
-  width 18px
-  height 18px
-  text-align center
-  line-height 16px
-  border-radius 8px
-  font 100 16px Arial
-  color white
-  background-color #9b9a8f
-
-.books-express .bd
-  width (6 * bd_width = 605px)
-  position relative
-  left -605px
+  .slide-controls .slide-btns a
+    display inline-block
+    width 18px
+    height 18px
+    text-align center
+    line-height 16px
+    border-radius 8px
+    font 100 16px Arial
+    color white
+    background-color #9b9a8f
 </style>

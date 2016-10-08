@@ -1,5 +1,5 @@
 <template lang="jade">
-.comment.size12
+#subject-comment.size12
   vmore(title='书评' link='' subTitle='全部193条')
   .types
     span.box(v-on:click="changeIndex($index)"
@@ -47,46 +47,47 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.types
-  .box
-    padding-bottom 10px
-    margin-right 10px
-    .type
-      color gray
-      cursor pointer
-    .type:hover
-      color white
-      background gray
-  .active
-    border-bottom 2px solid #037a
-    .type
-      color #037a
-    .type:hover
-      color #037a
-      background inherit
-.comments
-  margin-top 10px
-  border-top 1px solid lightgray
-  ul
-    li
-      margin-top 20px
-      .cover
-        float left
-        width 60px
-        margin-bottom 10px
-      .info
-        margin-left 60px
-        .top
-          background #F1FBEE
-          font-size 15px
-          padding 3px 0px
-        .name,.desc
+<style lang="stylus">
+#subject-comment
+  .types
+    .box
+      padding-bottom 10px
+      margin-right 10px
+      .type
+        color gray
+        cursor pointer
+      .type:hover
+        color white
+        background gray
+    .active
+      border-bottom 2px solid #037a
+      .type
+        color #037a
+      .type:hover
+        color #037a
+        background inherit
+  .comments
+    margin-top 10px
+    border-top 1px solid lightgray
+    ul
+      li
+        margin-top 20px
+        .cover
           float left
-          line-height 25px
-        .star
-          float left
-          margin-top 3px
-      .content, .time
-        line-height 20px
+          width 60px
+          margin-bottom 10px
+        .info
+          margin-left 60px
+          .top
+            background #F1FBEE
+            font-size 15px
+            padding 3px 0px
+          .name,.desc
+            float left
+            line-height 25px
+          .star
+            float left
+            margin-top 3px
+        .content, .time
+          line-height 20px
 </style>

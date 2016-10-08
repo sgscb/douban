@@ -1,14 +1,17 @@
-# 模仿豆瓣前端 live demo http://jk77.me:8080 
+# 模仿豆瓣前端 
 [![Build Status](https://travis-ci.org/jiakeqi/douban.svg?branch=douban)](https://travis-ci.org/jiakeqi/douban)
 > Use Vue.js 2.0, 
 
-> vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, mongoose(3.0+), redis
+> vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
-## Build Setup
+## live demo 
+http://jk77.me:8080 
+
+## Build
 
 ``` bash
 
-#redis
+#redis-server
 
 redis-server &
 
@@ -19,7 +22,7 @@ npm install
 npm run dev
 
 # build for production with minification
-npm run build
+npm run build && npm start
 
 ```
 
@@ -39,7 +42,7 @@ npm run build
    
    http://127.0.0.1:8080/subject/3332698
 
-## 记录
+## 更新到 vue.js2.0 记录
 1. 在2.0中 `Vue.set(store.item, item)` 不会触发更新dom, `store.item = item` 才可以
 2. 由于 `server side render` 的原因, 不能使用 `vue-resource` 了, 改用 `superagent` 发请求了
 3. `store.item` 为{}时, 在页面中引用 会直接error, mock数据, 请求成功再更新 
@@ -87,9 +90,7 @@ Then you should be able to gulp again. Fixed the issue for me.
 │   ├── store
 │   └── views
 ├── be
-│   ├── models
 │   ├── spiders
-│   ├── tools
 │   └── routers
 ├── node_modules
 ├── package.json

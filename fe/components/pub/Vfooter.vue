@@ -29,29 +29,22 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-#vfooter {
-  clear: both;
-  display: block;
-  color: #999;
-  padding: 12px 0;
-  position: relative;
-  top: 40px;
-  overflow: hidden;
-  zoom: 1;
-  border-top: 1px dashed #ddd;
-}
-
-.icp { 
-  float: left; 
-}
-
-.about { 
-  float: right;
-}
-
-a {
-  display: inline-block;
-}
+<style lang="stylus">
+#vfooter
+  clear both
+  display block
+  color #999
+  padding 12px 0
+  position relative
+  top 40px
+  overflow hidden
+  zoom 1
+  border-top 1px dashed #ddd
+  .icp
+    float left 
+  .about
+    float right
+  a
+    display inline-block
 
 </style>

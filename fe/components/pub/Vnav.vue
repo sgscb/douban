@@ -64,85 +64,67 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-#vnav {
-  background-color: #f6f6f1;
-}
+<style lang="stylus">
+#vnav
+  background-color #f6f6f1
+  .nav-primary
+    position relative
+    height 75px
+    border-bottom 1px solid #e5ebe4
 
-.nav-primary {
-  position: relative;
-  height: 75px;
-  border-bottom: 1px solid #e5ebe4;
-}
+  .nav-logo
+    background url('/lg_book_a11_1.png') no-repeat 0 12px
+    float left
+    height 56px
+    width 145px
+    position relative
+    margin-top 10px
 
+  .nav-search
+    position relative
+    float left
+    margin-left 15px
+    margin-top 20px
 
-.nav-logo {
-  background: url(https://img3.doubanio.com/f/book/2ced9ceaac293dcbe10bf8ebbaf624ced30e8fc9/pics/nav/lg_book_a11_1.png) no-repeat 0 12px;
-  float: left;
-  height: 56px;
-  width: 145px;
-  position: relative;
-  margin-top: 10px;
-}
+  .inp
+    width 470px
+    height 34px
+    background url('/nav_bg_a1.png') no-repeat 0 0
+    float left
 
+  .inp input
+    width 100%
+    height 29px
+    padding-left 15px
+    border-width 0px
 
-.nav-search {
-  position: relative;
-  float: left;
-  margin-left: 15px;
-  margin-top: 20px;
-}
+  .inp-btn
+    float left
 
-.inp {
-  width: 470px;
-  height: 34px;
-  background: url(https://img3.doubanio.com/f/shire/d45aaa7569335285e298dd7f3c045c8b364a19de/pics/nav1/nav_bg_a1.png) no-repeat 0 0;
-  float: left;
-}
+  .inp-btn input
+   width 37px
+   height 34px
+   border 0px
+   font-size 0px
+   background:url('/nav_bg_a1.png') no-repeat 0 -40px
 
-.inp input {
-  width: 100%;
-  height: 29px;
-  padding-left: 15px;
-  border-width: 0px;
-}
+  .nav-secondary
+    height 26px
+    margin-top 13px
 
-.inp-btn {
-  float: left;
-}
+  .nav-secondary ul li
+    display inline
+    margin-right 32px
 
-.inp-btn input {
- width: 37px;
- height: 34px;
- border: 0px;
- font-size: 0px;
- background:url(https://img3.doubanio.com/f/shire/d45aaa7569335285e298dd7f3c045c8b364a19de/pics/nav1/nav_bg_a1.png) no-repeat 0 -40px;
-}
+  a
+    color #614e3c
 
-.nav-secondary {
-  height: 26px;
-  margin-top: 13px;
-}
+  a:hover
+    background-color #614e3c
+    color white
 
-.nav-secondary ul li {
-  display: inline;
-  margin-right: 32px;
-}
-
-a {
-  color: #614e3c;
-}
-
-a:hover {
-  background-color: #614e3c;
-  color: white;
-}
-
-.book-cart {
-  position: relative;
-  padding-left: 26px;
-  background: url(https://img3.doubanio.com/f/book/b31d9c8cc8f22b35cebdacb8ab8fac5a5b74bb30/pics/book/icon-cart.png) no-repeat;
-}
-
-
+  .book-cart
+    position relative
+    padding-left 26px
+    background url('/icon-cart.png') no-repeat
 </style>

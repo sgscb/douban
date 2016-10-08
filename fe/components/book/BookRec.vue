@@ -1,5 +1,5 @@
 <template lang="jade">
-.book_rec.section
+#book_rec.section
   .hd
     span 豆瓣图书250 
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 更多»
@@ -28,11 +28,11 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 
 @import "../../assets/book.styl"
 
-.book_rec .bd
+#book_rec
   .title
     word-wrap break-word
   .clear
@@ -45,7 +45,7 @@ export default {
     margin-bottom 10px
     width calc(33.3% - 30px)
     overflow hidden
-img
-  width 80px
-  height 100px
+  img
+    width 80px
+    height 100px
 </style>

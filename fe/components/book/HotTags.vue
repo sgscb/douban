@@ -1,5 +1,5 @@
 <template lang="jade">
-.hot-tags.section
+#hot-tags.section
   .hd
     span 热门标签
     a(href='/tags') 所有热门标签»
@@ -31,45 +31,41 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 
 @import "../../assets/book.styl"
 
-.hot-tags 
+#hot-tags 
   margin-top 30px
+  .bd 
+    .section
+      margin-bottom 15px
+      li
+        display inline-block
+        padding 2px 11px 0
+        margin 0 3px 5px 0
+        line-height 20px
+        font-size 13px
+        background-color #f5f5f5
+      li:first-child a
+        color black
+        cursor text
 
-.hot-tags .bd .section
-  margin-bottom 15px
+      li:first-child
+        display block
+        background-color white
 
-.hot-tags .bd .section li
-  display inline-block
+      li:first-child:hover
+        background-color white
 
-.hot-tags .bd .section li
-  padding 2px 11px 0
-  margin 0 3px 5px 0
-  line-height 20px
-  font-size 13px
-  background-color #f5f5f5
+      li:hover
+        background-color #E4E4E4
 
-.hot-tags .bd .section li:first-child a
-  color black
-  cursor text
+      li:last-child a
+        color gray
+        padding-right 10px
 
-.hot-tags .bd .section li:first-child
-  display block
-  background-color white
-
-.hot-tags .bd .section li:first-child:hover
-  background-color white
-
-.hot-tags .bd .section li:hover
-  background-color #E4E4E4
-
-.hot-tags .bd .section li:last-child a
-  color gray
-  padding-right 10px
-
-a:hover
-  background-color inherit
-  color inherit
+      a:hover
+        background-color inherit
+        color inherit
 </style>

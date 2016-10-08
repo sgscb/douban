@@ -1,5 +1,5 @@
 <template lang="jade">
-.ebook-area.section
+#ebook-area.section
   .hd
     span 电子图书
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 查看全部»
@@ -28,10 +28,10 @@ export default {
 }
 
 </script>
-<style lang="stylus" scoped>
-
+<style lang="stylus">
 @import "../../assets/book.styl"
-.bd
-  width 610px
-  position relative
+#ebook-area
+  .bd
+    width 610px
+    position relative
 </style>

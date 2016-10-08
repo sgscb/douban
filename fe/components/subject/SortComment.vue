@@ -1,6 +1,6 @@
 
 <template lang="jade">
-.sort-comment.size12
+#subject-sort-comment.size12
   vmore(title='短评' link='' subTitle='全部193条')
   .types
     span.type(v-on:click="changeIndex($index)"
@@ -40,8 +40,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.sort-comment
+<style lang="stylus">
+#subject-sort-comment
   .types
     padding-bottom 10px
     border-bottom 1px dashed lightgray

@@ -93,63 +93,52 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 #vheader 
   height 28px
   background-color pink
   background-color #545652
 
+  .nav-links 
+    display inline-block
 
-.nav-links 
-  display inline-block
+  .nav-links li 
+    display inline-block
 
+  .more-items 
+    position absolute
+    background-color white
+    display none
+    padding 10px 3px
 
-.nav-links li 
-  display inline-block
+  .more-items li 
+    display block
+    padding 0 5px
+    height 30px
+    
+  .more-items li a 
+    color gray
+    line-height 30px
+    height 100%
 
+  .more-items li:hover 
+    background-color rgb(233, 233, 233)
 
-.more-items 
-  position absolute
-  background-color white
-  display none
-  padding 10px 3px
+  .nav-info 
+    display inline-block
+    float right
+    margin-right 15px
 
+  .nav-doubanapp 
+    display inline-block
+    float right
 
-.more-items li 
-  display block
-  padding 0 5px
-  height 30px
+  a 
+    padding 0 12px
+    height 28px
+    line-height 28px
+    color #d5d5d5
 
-  
-.more-items li a 
-  color gray
-  line-height 30px
-  height 100%
-
-
-.more-items li:hover 
-  background-color rgb(233, 233, 233)
-
-
-.nav-info 
-  display inline-block
-  float right
-  margin-right 15px
-
-
-.nav-doubanapp 
-  display inline-block
-  float right
-
-
-a 
-  padding 0 12px
-  height 28px
-  line-height 28px
-  color #d5d5d5
-
-
-a:hover 
-  color white
-
+  a:hover 
+    color white
 </style>

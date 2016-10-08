@@ -1,5 +1,5 @@
 <template lang="jade">
-.market-books.section
+#market-books.section
   .hd
     span 豆瓣纸书
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 查看全部»
@@ -36,35 +36,32 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import "../../assets/book.styl"
-.bd
-  width 610px
-  position relative
-
-.market-books .bd .top .cover
-  float left
-  position relative
-  margin-bottom 50px
-  margin-right 20px
-
-.market-books .bd .top .cover img
-  width 130px
-  height 172px
-
-.market-books .bd .top .title
-  position relative
-  font-size 23px
-  line-height 32px
-  padding-top 20px
-
-.market-books .bd .top .title .price
-  font-size 17px
-  color #E76648
-  margin-left 17px
-
-.market-books .bd .top .desc
-  color #9B9B9B
-  font-size 14px
-  line-height 20px
+#market-books
+  .bd
+    width 610px
+    position relative
+    .top
+      .cover
+        float left
+        position relative
+        margin-bottom 50px
+        margin-right 20px
+        img
+          width 130px
+          height 172px
+      .title
+        position relative
+        font-size 23px
+        line-height 32px
+        padding-top 20px
+        .price
+          font-size 17px
+          color #E76648
+          margin-left 17px
+      .desc
+        color #9B9B9B
+        font-size 14px
+        line-height 20px
 </style>

@@ -5,8 +5,8 @@
   vnav
   .wapper
     #book_home_top_banner.no-bg  <!-- 广告位1 -->
-      a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
-        img(src='../assets/book-top.jpg')
+      a(href='#')
+        img(src='/book-top.jpg')
     .content <!-- 广告位2 -->
       .bubble <!-- 气泡 -->
         .small-bubble
@@ -16,20 +16,20 @@
         br
         p.desc.size12 {{bubbledata.abstract}}
       #book_home_middle_banner.section.no-bg <!-- 广告位2 -->
-        a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
-          img(src='../assets/book-middle.jpg')
+        a(href='#')
+          img(src='/book-middle.jpg')
       express-books(:bookdata='bookdata.booksExpress') <!-- 新书速递 -->
       popular-books(:bookdata='bookdata.popularBooks') <!-- 最受关注图书榜 -->
       market-books(:bookdata='bookdata.marketBooks') <!-- 豆瓣纸书 -->
       ebooks(:bookdata='bookdata.ebooks') <!-- 电子书 -->
       popular-authors(:authordata='bookdata.popularAuthors') <!-- 书评人 -->
       #book_home_bottom_banner.section.no-bg <!-- 广告位4 -->
-        a(href='https://market.douban.com/book/zaofangzi/?platform=web&channel=dale_book_home_top_super_banner')
-          img(src='../assets/book-bottom.jpg')
+        a(href='#')
+          img(src='/book-bottom.jpg')
     .book-side <!-- 侧边栏 -->
       #home-top-right.cover <!-- 广告位5 -->
         a
-          img(src='../assets/book-top-right.jpg')
+          img(src='/book-top-right.jpg')
       hot-tags(:tagdata='bookdata.hotTags') <!-- 热门标签-->
       weekly-top(:bookdata='bookdata.weeklyTop') <!-- 周榜 -->
       book-rec(:bookdata='bookdata.bookRec') <!-- 推荐 -->
@@ -47,12 +47,12 @@
             li
               .cover
                 a
-                  img(src='https://img3.doubanio.com/f/book/dd2126e4349422cac36369e3ee8e098bf12f3e5e/pics/book/home_site.jpg')
+                  img(src='/home_site.jpg')
               a 豆瓣小站
             li
               .cover
                 a
-                  img(src='https://img3.doubanio.com/f/book/dd2126e4349422cac36369e3ee8e098bf12f3e5e/pics/book/home_site.jpg')
+                  img(src='/home_site.jpg')
               a 豆瓣小站 <!-- 联系我们 -->
   vfooter
 </template>
@@ -122,61 +122,61 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
+#book
+  #book_home_top_banner 
+    position relative
+    margin 20px 0px
 
-#book_home_top_banner 
-  position relative
-  margin 20px 0px
+  .content 
+    float left
+    width 590px
+    padding-right 40px
+    margin-top 30px
 
-.content 
-  float left
-  width 590px
-  padding-right 40px
-  margin-top 30px
+  .book-side 
+    float right
+    width 310px
 
-.book-side 
-  float right
-  width 310px
+  .apply-links li 
+    display inline-block
+    margin-right 30px
 
-.apply-links li 
-  display inline-block
-  margin-right 30px
+  .contact li 
+    display inline-block
+    margin-right 30px
 
-.contact li 
-  display inline-block
-  margin-right 30px
+  .bubble 
+    width 300px
+    min-height200px
+    background-color green
+    position absolute
+    padding 20px
+    line-height 20px
+    border 1px solid black
+    border-radius 4px
+    background-color #F5FFF7
+    z-index 10
+    display none
 
-.bubble 
-  width 300px
-  min-height200px
-  background-color green
-  position absolute
-  padding 20px
-  line-height 20px
-  border 1px solid black
-  border-radius 4px
-  background-color #F5FFF7
-  z-index 10
-  display none
+  .small-bubble 
+    content ""
+    display block /* reduce the damage in FF3.0 */
+    position absolute
+    border-top 10px solid transparent
+    border-right 10px solid black
+    border-bottom 10px solid transparent
+    left -10px
+    top 110px
 
-.small-bubble 
-  content ""
-  display block /* reduce the damage in FF3.0 */
-  position absolute
-  border-top 10px solid transparent
-  border-right 10px solid black
-  border-bottom 10px solid transparent
-  left -10px
-  top 110px
-
-.small-bubble:before // 黑线
-  content ""
-  display block /* reduce the damage in FF3.0 */
-  position absolute
-  border-top 9px solid transparent
-  border-right 9px solid #ffffff
-  border-bottom 9px solid transparent
-  top -9px
-  margin-left 1px
+  .small-bubble:before // 黑线
+    content ""
+    display block /* reduce the damage in FF3.0 */
+    position absolute
+    border-top 9px solid transparent
+    border-right 9px solid #ffffff
+    border-bottom 9px solid transparent
+    top -9px
+    margin-left 1px
 
 </style>

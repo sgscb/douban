@@ -1,12 +1,12 @@
 <template lang="jade">
-.info.size12
+#subject-info.size12
   .cover
     a(:href='info.alt')
       img(:src='info.image')
   .more
     span
       span 作者：
-      a(href='http://1.com/') {{info.author}}
+      a(href='#') {{info.author}}
     br
     span 出版社: {{info.publisher}}
     br
@@ -20,7 +20,7 @@
     br
     span
       span 丛书:
-      a(href='http://1.com/') 张悦然作品集
+      a(href='#') 张悦然作品集
     br
     span ISBN: 
   .interest
@@ -57,7 +57,7 @@
     a.colbutt 读过
     span 评价:
     .rating.no-bg
-      a.star(v-for='n in 5' href='https://accounts.douban.com/register?reason=rate')
+      a.star(v-for='n in 5' href='#')
         img(v-bind:id='n' v-bind:src='hoverImg'  @mouseover='mouseover($event.target)' @mouseout='mouseout($event.target)')
     span(v-show='levelName') {{levelName}}
   .clearfix
@@ -84,8 +84,8 @@ export default {
 
   data () {
     return {
-      hoverImg: 'https://img3.doubanio.com/f/shire/2520c01967207a1735171056ec588c8c1257e5f8/pics/rating_icons/star_hollow_hover.png',
-      onMouseOver: 'https://img3.doubanio.com/f/shire/5a2327c04c0c231bced131ddf3f4467eb80c1c86/pics/rating_icons/star_onmouseover.png',
+      hoverImg: '/star_hollow_hover.png',
+      onMouseOver: '/star_onmouseover.png',
       level: 0,
       info: this.$store.state.item
     }
@@ -100,14 +100,14 @@ export default {
 
   methods: {
     mouseout: function (el) {
-      let els = document.querySelectorAll('.info .interest_sect_level .rating a img')
+      let els = document.querySelectorAll('#subject-info .interest_sect_level .rating a img')
       for (var i = 0; i < el.id; i++) {
         els[i].src = this.hoverImg
       }
       this.level = 0
     },
     mouseover: function (el) {
-      let els = document.querySelectorAll('.info .interest_sect_level .rating a img')
+      let els = document.querySelectorAll('#subject-info .interest_sect_level .rating a img')
       for (var i = 0; i < el.id; i++) {
         els[i].src = this.onMouseOver
       }
@@ -117,8 +117,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.info
+<style lang="stylus">
+#subject-info
   .cover
     float left
     margin-right 10px
@@ -149,7 +149,7 @@ export default {
         .star
           width 75px
           height 15px
-          background-image url('https://img3.doubanio.com/f/shire/680a4bc4c384199245b080c7104da5be8ed717d3/pics/rating_icons/ic_rating_m.png')
+          background-image url('/ic_rating_m.png')
           background-position 0 -30px
         .num
           line-height 20px

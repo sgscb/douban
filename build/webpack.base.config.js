@@ -6,7 +6,7 @@ module.exports = {
   devtool: '#source-map',
   entry: {
     app: './fe/client-entry.js',
-    vendor: ['vue', 'vue-router', 'vuex', 'lru-cache', 'es6-promise']
+    vendor: ['vue', 'vue-router', 'vuex', 'es6-promise']
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -34,7 +34,7 @@ module.exports = {
       }
     ]
   },
-plugins: [
+  plugins: [
     new webpack.LoaderOptionsPlugin({
       vue: vueConfig
     })

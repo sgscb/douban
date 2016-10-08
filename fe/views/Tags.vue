@@ -87,36 +87,35 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.wapper
-  .main
-    width 600px
-    .top
-      margin-top 30px
-      padding-bottom 40px
-      border-bottom 2px solid #DBDEDE
-      .title
-        font-size 25px
-      a,span
-        float right
-        line-height 18px
-        margin-top 15px
-        font-size 12px
-      .active
-        background transparent
-        color gray
-        cursor text
-    .tags
-      ul
-        .class
-          font-size 15px
-          clear both
-          padding 20px 0px
-        li
-          line-height 22px
-          float left
-          width 25%
-          .num
-            color gray
-    
+<style lang="stylus">
+#tags .wapper
+    .main
+      width 600px
+      .top
+        margin-top 30px
+        padding-bottom 40px
+        border-bottom 2px solid #DBDEDE
+        .title
+          font-size 25px
+        a,span
+          float right
+          line-height 18px
+          margin-top 15px
+          font-size 12px
+        .active
+          background transparent
+          color gray
+          cursor text
+      .tags
+        ul
+          .class
+            font-size 15px
+            clear both
+            padding 20px 0px
+          li
+            line-height 22px
+            float left
+            width 25%
+            .num
+              color gray
 </style>

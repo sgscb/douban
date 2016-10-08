@@ -1,5 +1,5 @@
 <template lang="jade">
-.book-subject
+#subject
   vheader
   vnav
   article.wapper
@@ -106,49 +106,50 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-article
-  margin-top 20px
-  .content
-    width 607px
-    margin-right 30px
-    float left
-    h1
-      font-size 25px
-      line-height 60px
-    .related-info
-      .user-tag
-        a
-          font-size 12px
-          padding 5px 10px
-          display inline-block
-          background #f5f5f5
-          margin-right 15px
-        a:hover
-          background #EAEAEA
-          color inherit
-      .same-like, .same-like-ebook
-        ul
-          li
-            display inline-block
-            margin 15px 33px 15px 0
+#subject
+  article
+    margin-top 20px
+    .content
+      width 607px
+      margin-right 30px
+      float left
+      h1
+        font-size 25px
+        line-height 60px
+      .related-info
+        .user-tag
+          a
             font-size 12px
-            width 85px
-            text-align center
-            line-height 18px
-            .cover
-              float left
-            .title
-               display inline-block
-            .price
-              float left
-              width 100%
-              clear both
-            img
-              width 100%
-  .side
-    width 235px
-    float right
-  span
-    font-size 12px
-    line-height 18px
+            padding 5px 10px
+            display inline-block
+            background #f5f5f5
+            margin-right 15px
+          a:hover
+            background #EAEAEA
+            color inherit
+        .same-like, .same-like-ebook
+          ul
+            li
+              display inline-block
+              margin 15px 33px 15px 0
+              font-size 12px
+              width 85px
+              text-align center
+              line-height 18px
+              .cover
+                float left
+              .title
+                 display inline-block
+              .price
+                float left
+                width 100%
+                clear both
+              img
+                width 100%
+    .side
+      width 235px
+      float right
+    span
+      font-size 12px
+      line-height 18px
 </style>

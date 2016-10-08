@@ -27,30 +27,21 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-.index-more {
-  width: 100%;
-  height: 30px;
-  position: relative;
-  display: block;
-  margin-top: 10px;
-}
-
-h2 {
-  color: #072;
-}
-
-.point {
-  letter-spacing: -5px;
-  position: relative;
-  margin: 0 5px;
-}
-    
-.wapper {
-  color: black;
-}
-
-a {
-  color: #669;
-}
+<style lang="stylus">
+.index-more
+  width 100%
+  height 30px
+  position relative
+  display block
+  margin-top 10px
+  h2
+    color #072
+  .point
+    letter-spacing -5px
+    position relative
+    margin 0 5px
+  .wapper
+    color black
+  a
+    color #669
 </style>

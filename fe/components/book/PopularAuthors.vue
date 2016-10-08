@@ -1,5 +1,5 @@
 <template lang="jade">
-.popular-authors.section
+#popular-authors.section
   .hd
     span 书评人
     a(href='https://book.douban.com/latest?icn=index-latestbook-all') 进入书评专区»
@@ -31,21 +31,20 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 
 @import "../../assets/book.styl"
-
-.popular-authors .bd ul li .cover
-  float left
-  margin-right 20px
-
-.popular-authors .bd ul li .info
-  float left
-  line-height 20px
-  width 200px
-  overflow hidden
+#popular-authors
+  .bd ul li 
+    .cover
+      float left
+      margin-right 20px
+    .info
+      float left
+      line-height 20px
+      width 200px
+      overflow hidden
   p, a
-    // display inline
     word-break break-all
 
 </style>

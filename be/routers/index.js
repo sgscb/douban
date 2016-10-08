@@ -5,6 +5,11 @@ const client = redis.createClient()
 const router = express.Router()
 const request = require('../spiders/request')
 
+setInterval(function(){
+  request()
+}, 1000 * 60 * 60)
+// 每小时请求数据更新
+
 router.get('*', (req, res, next) => {
   client.get('/api' + req.url, (err, data) => {
     if (err) {

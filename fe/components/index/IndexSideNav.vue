@@ -1,23 +1,19 @@
-<template>
-<div id="index-sidenav">
-  <div class="mod"><a class="section-title size25 a-link">读书</a>
-    <div class="side-links">
-      <ul v-for="item in side_links" class="size14">
-        <li><a :href="item.link" class="a-link">{{item.title}}</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="apps-list">
-    <ul class="size12">
-      <li>
-        <div class="app-icon"><a></a></div><a class="app-name a-link">豆瓣阅读</a>
-      </li>
-    </ul>
-  </div>
-</div>
+<template lang="jade">
+#index-sidenav
+  .mod
+    a.section-title.size25.a-link 读书
+    .side-links
+      ul.size14(v-for='item in side_links')
+        li
+          a.a-link(:href='item.link') {{item.title}}
+  .apps-list
+    ul.size12
+      li
+        .app-icon
+          a
+        a.app-name.a-link 豆瓣阅读
 </template>
 
-// titleColor需要提取 app-list需要提取
 <script>
 export default {
 
@@ -32,58 +28,45 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-#index-sidenav {
-  width: 100px;
-  float: left;
-  margin-right: 20px;
-}
+<style lang="stylus">
+#index-sidenav
+  width 100px
+  float left
+  margin-right 20px
+  
+  a
+    color #614e3c
+    position relative
+    display inline-block
 
-a {
-  color: #614e3c;
-  position: relative;
-  display: inline-block;
-}
+  a:hover
+    color white
 
-a:hover {
-  color: white;
-}
+  .side-links
+    margin-bottom 40px
+    ul
+      position relative
+      top 12px
+      li
+        margin-top 5px
+        height 20px
 
-.side-links {
-  margin-bottom: 40px;
-}
+  .apps-list li
+    margin-top 15px
 
-.side-links ul {
-  position: relative;
-  top: 12px;
-}
+  .app-name
+    position relative
+    top 2px
 
-.side-links ul li {
-  margin-top: 5px;
-  height: 20px;
-}
-
-.apps-list li {
-  margin-top: 15px;
-}
-
-.app-name {
-  position: relative;
-  top: 2px;
-}
-
-.app-icon {
-  width: 100%; 
-}
-
-.app-icon a {
-  background: url('https://img3.doubanio.com/f/sns/02f0736c7010c4bdccebbd6d6b140ccb1506cf6b/pics/sns/app/app_icons_50_10.jpg');
-  background-position: 0 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  -webkit-box-shadow: 1px 1px 2px #999;
-  -moz-box-shadow: 1px 1px 2px #999;
-  box-shadow: 1px 1px 2px #999;
-}
+  .app-icon
+    width 100%
+    a
+      background url('/app_icons_50_10.png')
+      background-position 0 0
+      width 50px
+      height 50px
+      border-radius 10px
+      -webkit-box-shadow 1px 1px 2px #999
+      -moz-box-shadow 1px 1px 2px #999
+      box-shadow 1px 1px 2px #999
 </style>
