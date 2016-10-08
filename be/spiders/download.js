@@ -1,9 +1,8 @@
 const fs = require('fs')
 const superagent = require('superagent')
-const config = require('../config')
+const {host} = require('../../config')
 const dir = './public/imgs/'
-const isProd = process.env.NODE_ENV === 'production'
-const host = isProd ? config.prodHost : config.devHost
+
 // 把豆瓣的图片保存到本地
 module.exports = function ($) {
   $('img').each(function(index, el) {
