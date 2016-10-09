@@ -4,7 +4,7 @@
 
 > vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
-## live demo 
+## live demo （部署在搬瓦工主机上，海外节点，应该需要1s）
 http://jk77.me
 
 ## Build
