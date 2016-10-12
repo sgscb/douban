@@ -1,6 +1,6 @@
 const redis = require('redis')
 const client = redis.createClient()
-
+const {downloadImg} = require('./download')
 
 module.exports = ($, url) => {
   console.log(url);
@@ -115,7 +115,7 @@ let _parse_book_index = ($, key) => {
     let marketBooksPic = marketBooksStyle.substring(marketBooksStyle.indexOf('url(') + 4, marketBooksStyle.indexOf(')'))
     let marketBooksTop = {
       link: $(marketBooksBdEl).find('.top .cover a').attr().href,
-      pic: marketBooksPic,
+      pic: downloadImg(marketBooksPic),
       title: $(marketBooksBdEl).find('.top #market_books_header_info .title').text(),
       price: $(marketBooksBdEl).find('.top #market_books_header_info .title .price').text(),
       desc: $(marketBooksBdEl).find('.top #market_books_header_info .desc').text()

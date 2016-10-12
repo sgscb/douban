@@ -24,21 +24,22 @@ export default {
 
   data () {
     return {
-      navItems: [{
-        class: null,
-        title: '我读',
-        link: 'https://book.douban.com/mine?icn=index-nav'
-      },
-      {
-        class: null,
-        title: '动态',
-        link: 'https://book.douban.com/updates?icn=index-nav'
-      },
-      {
-        class: null,
-        title: '豆瓣猜',
-        link: 'https://book.douban.com/recommended?icn=index-nav'
-      },
+      navItems: [
+      // {
+      //   class: null,
+      //   title: '我读',
+      //   link: 'https://book.douban.com/mine?icn=index-nav'
+      // },
+      // {
+      //   class: null,
+      //   title: '动态',
+      //   link: 'https://book.douban.com/updates?icn=index-nav'
+      // },
+      // {
+      //   class: null,
+      //   title: '豆瓣猜',
+      //   link: 'https://book.douban.com/recommended?icn=index-nav'
+      // },
       {
         class: null,
         title: '分类浏览',

@@ -148,7 +148,7 @@ export default {
 
   .bubble 
     width 300px
-    min-height200px
+    min-height 200px
     background-color green
     position absolute
     padding 20px

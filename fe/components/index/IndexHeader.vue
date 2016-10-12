@@ -117,6 +117,7 @@ export default {
         display inline-block
       .lnk-book
         background-position 0px 0px
+        border 2px solid green
       .lnk-movie
         background-position -60px 0px
       .lnk-music

@@ -1,5 +1,5 @@
 <template lang="jade">
-#tags
+#itemlist
   vheader
   vnav
   .wapper.size12
@@ -51,6 +51,10 @@ export default {
     title: String
   },
 
+  beforeMount: function () {
+    document.title = this.title + this.$route.params.id
+  },
+
   methods: {
     createHref: function (id) {
       return '/subject/' + id
@@ -60,7 +64,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#tags
+#itemlist
   .top
     padding 30px 0px
     .title

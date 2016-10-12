@@ -18,3 +18,12 @@ module.exports = function ($) {
       superagent(url).pipe(fs.createWriteStream(dir + newUrl))
     })
 }
+
+module.exports.downloadImg = function (url) {
+  let newUrl = url.substring(8, url.length).replace(/\//g,'')
+  if (newUrl.indexOf('?v=') != -1) {
+    newUrl = newUrl.substring(0, newUrl.indexOf('?v='))
+  }
+  superagent(url).pipe(fs.createWriteStream(dir + newUrl))
+  return host() + '/imgs/' + newUrl
+}

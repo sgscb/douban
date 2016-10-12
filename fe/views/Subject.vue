@@ -85,6 +85,7 @@ export default {
 
   beforeMount () {
     fetchItem(this.$store, this)
+    document.title = this.$store.state.item.title + '(豆瓣)' 
   },
   name: 'book-subject',
 

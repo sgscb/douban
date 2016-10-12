@@ -53,7 +53,7 @@ export default {
     // 无限滚动 利用数据给head和tail添加相同数据 到边界后定时无动画说偷偷刷新
     carousel: function (index) {
       console.log(index)
-      var el = document.querySelector('.books-express .bd')
+      var el = document.querySelector('#books-express .bd')
       if (index === 5) {
         this.$store.dispatch('EXPRESS_BOOK_INDEX', 1)
         setTimeout(() => {

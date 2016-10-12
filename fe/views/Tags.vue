@@ -68,6 +68,7 @@ export default {
 
   beforeMount () {
     fetchItem(this.$store)
+    document.title = '所有图书标签'
   },
 
   data () {

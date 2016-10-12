@@ -31,6 +31,7 @@ export default {
 
   beforeMount () {
     fetchItem(this.$store)
+    document.title = '豆瓣, 请点击[读书]'
   },
 
   components: {
