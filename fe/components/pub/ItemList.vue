@@ -4,7 +4,7 @@
   vnav
   .wapper.size12
     .top
-      h1.title {{title}}{{$route.params.id}}
+      h1.title {{title}}{{$route.params.id || $route.query.search_text}} 
     .main
       ul
         li(v-for='item in items.books')
@@ -52,7 +52,8 @@ export default {
   },
 
   beforeMount: function () {
-    document.title = this.title + this.$route.params.id
+    let title = this.$route.params.id || this.$route.query.search_text
+    document.title = this.title + title
   },
 
   methods: {

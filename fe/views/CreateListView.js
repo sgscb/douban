@@ -4,7 +4,9 @@ export function createListView (title) {
     name: 'list-stories-view',
 
     preFetch (store, router) {
-      return store.dispatch('FETCH_LIST_DATA',router.history.current.params.id)
+      let words = router.history.current.query.search_text || router.history.current.params.id
+      // console.log(words)
+      return store.dispatch('FETCH_LIST_DATA',words)
     },
     // this will be called during SSR to pre-fetch data into the store!
     render (h) {

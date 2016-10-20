@@ -5,15 +5,15 @@
       a(href='/book')
         .nav-logo
       .nav-search
-        form
+        form(action='/search', method='get', enctype='text/plain')
           .inp
-            input(type='text', name='search_text', placeholder='书名、作者、ISBN')
+            input(type='text', name='search_text', placeholder='书名、作者、ISBN', :value='$route.query.search_text')
           .inp-btn
             input(type='submit', value='搜索')
   .nav-secondary
     ul.wapper.size13
-      li(v-for='item in navItems', class='item.class')
-        a(target='_blank') {{item.title}}
+      li(v-for='item in navItems', :class='item.class')
+        a(target='_blank', :href='item.link') {{item.title}}
   
 </template>
 
@@ -43,7 +43,7 @@ export default {
       {
         class: null,
         title: '分类浏览',
-        link: 'https://book.douban.com/tag/?icn=index-nav'
+        link: '/tags'
       },
       {
         class: 'book-cart',
