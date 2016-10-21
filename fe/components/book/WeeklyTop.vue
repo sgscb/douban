@@ -14,7 +14,7 @@
     v-for='(books, $index) in bookdata'
     v-show='$index==activeIndex')
       li(v-for='(book, $index) in books')
-        span.index {{$index}}.
+        span.index {{$index + 1}}.
         .info
           a.name.line1(:href='book.link', target='_blank') {{book.title}}
           p.author.line1 {{book.author}}

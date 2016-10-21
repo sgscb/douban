@@ -11,6 +11,7 @@
         a(class='prev', @click='prev()') ‹
         a(class='next', @click='next()') ›
   .bd.row-5
+
     ul.carousel(v-for='(book, $index) in bookdata', track-by="$index")
       book-row-5(:index='index', :bookdata='book')
 </template>
@@ -70,10 +71,10 @@ export default {
 
       el.style.transition = 'all 0.7s ease-in 0s'
       el.style.left = index * -605 + 'px'
-
-      var dots = document.querySelectorAll('.slide-dots li a')
       index = index >= 5 ? 1 : index
       index = index <= 0 ? 4 : index
+      var dots = document.querySelectorAll('.slide-dots li a')
+      
       for (let i = 0; i < dots.length; i++) {
         let dot = dots[i]
         dot.style.background = '#dfdfdf'

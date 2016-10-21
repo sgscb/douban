@@ -1,6 +1,6 @@
 <template lang="jade">
 #subject-comment.size12
-  vmore(title='书评' link='' subTitle='全部193条')
+  vmore(title='书评(豆瓣暂时没有评论 API，等爬虫)' link='' subTitle='全部193条')
   .types
     span.box(v-on:click="changeIndex($index)"
          v-for="(type, $index) in types"

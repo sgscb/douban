@@ -17,7 +17,7 @@ export default new Router({
     { path: '/book', component: Book },
     { path: '/subject/:id(\\d+)', component: Subject},
     { path: '/tag/:id', component: createListView('豆瓣图书标签:')},
-    { path: '/search', component: createListView('搜索:')},
+    { path: '/search', component: createListView('书籍搜索:')},
     { path: '/tags', component: Tags},
     // { path: '*', redirect: '/' },
   ]

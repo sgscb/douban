@@ -14,7 +14,7 @@
           .info
             a.title(:href='createHref(item.id)') {{item.title}}
             .more
-              span.author {{item.author}} &nbsp/&nbsp
+              span.author {{item.author[0]}} &nbsp/&nbsp
               span.translator(v-if='item.translator === []') {{item.translator}} &nbsp/&nbsp
               span.publisher {{item.publisher}} &nbsp/&nbsp
               span.pubdate {{item.pubdate}} &nbsp/&nbsp

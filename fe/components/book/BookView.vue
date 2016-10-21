@@ -1,3 +1,4 @@
+<!-- 公用 bookview 组件 -->
 <template lang="jade">
   .bookview
     li(v-for='book in bookdata')
@@ -7,7 +8,7 @@
       .intervenor-info(v-if='index')
         img(src='/jd_recommend.png')
         span.size13 推荐
-      a.title.size13 {{book.title}}
+      a.title.size13(:href='book.link', target='_blank') {{book.title}}
       p.author.size12 {{book.price || book.author}} 
 </template>
 
@@ -16,16 +17,10 @@ export default {
 
   name: 'bookview',
 
-  data () {
-    return {
-    }
-  },
-
   props: ['index', 'bookdata'],
 
   methods: {
     mouseover: function (el, book) {
-      console.log(book)
       if (el.tagName === 'IMG') {
         el = el.parentNode.parentNode // 传递给父元素
       }

@@ -5,24 +5,31 @@
       img(:src='info.image')
   .more
     span
-      span 作者：
-      a(href='#') {{info.author}}
-    br
+      label 作者：
+      a(href='#') {{info.author[0]}}
+      br
     span 出版社: {{info.publisher}}
-    br
+      br
+    span(v-if='info.alt_title')
+      label 原作名：{{info.alt_title}}
+      br
+    span(v-if='info.translator')
+      label 译者：
+      a(href='#') {{info.translator[0]}}
+      br
     span 出版年: {{info.pubdate}}
-    br
+      br
     span 页数: {{info.pages}}
-    br
+      br
     span 定价: {{info.price}}
-    br
+      br
     span 装帧: {{info.binding}}
-    br
-    span
+      br
+    span(v-if='info.series')
       span 丛书:
-      a(href='#') 张悦然作品集
-    br
-    span ISBN: 
+      a(href='#') {{info.series.title}}
+      br
+    span ISBN: {{info.isbn13}}
   .interest
     .rating_logo 豆瓣评分
     .rating_self

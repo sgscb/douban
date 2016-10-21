@@ -1,7 +1,7 @@
 
 <template lang="jade">
 #subject-sort-comment.size12
-  vmore(title='短评' link='' subTitle='全部193条')
+  vmore(title='短评(豆瓣暂时没有评论 API，等爬虫)' link='' subTitle='全部193条')
   .types
     span.type(v-on:click="changeIndex($index)"
        v-for="(type, $index) in types"
@@ -13,7 +13,7 @@
       span.time 2016-07-20
       a.useful 有用
       span.num 19
-      span.content 槽太多……显然她的写作胸怀和赞美她的评论家所举有很大分歧。总之千万不能以她来想象推论80后小说写作者，这几年突起的80后好作者不要太多。
+      span.content 槽太多……显然她的 写作胸怀和赞美她的评论家所举有很大分歧。总之千万不能以她来想象推论80后小说写作者，这几年突起的80后好作者不要太多。
 </template>
 
 <script>

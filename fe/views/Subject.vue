@@ -12,48 +12,38 @@
           span {{item.summary}}
         .authorDesc
           vmore(title='作者简介')
-          span {{item.author_intro}}
+          span(v-html='item.author_intro')
         .dict
           vmore(title='目录')
-          span 第一章
-            br
-            | 第二章
-            br
-            | 第三章
-            br
-            | 第四章
-            br
-            | 第五章
-            br
-            | 后 记
+          span(v-html='item.catalog')
         .user-tag
-          vmore(title='豆瓣成员常用的标签(*)个')
+          vmore(title='豆瓣成员常用的标签(N)个')
           a(v-for='tag in item.tags') {{tag.name}}
-        .subject-show
+        .subject-show(v-if='item.series')
           vmore(title='丛书信息')
-          span
-            a 张悦然作品集(共6册)
-            | , 这套丛书还有 《樱桃之远》,《葵花走失在1890》,《水仙已乘鲤鱼去》,《十爱》,《誓鸟》。
+          //- span
+          //-   a 张悦然作品集(共6册)
+          //-   | , 这套丛书还有 《樱桃之远》,《葵花走失在1890》,《水仙已乘鲤鱼去》,《十爱》,《誓鸟》。
         .same-like-ebook
-          vmore(title='喜欢读 \'\'\ 茧 \'\'\ 的人也喜欢的电子书')
+          vmore(:title='item.title')
           span 支持 Web、iPhone、iPad、Android 阅读器
           ul
             li(v-for='n in 5')
               .cover
                 a.cover(href='')
                   img(src='https://img3.doubanio.com/lpic/s28897671.jpg' alt='')
-              a.title 密林中
-              span.price 19.00元
+              a.title 我也是推荐
+              span.price 19999.00元
         .same-like
-          vmore(title='喜欢读 \'\'\ 茧 \'\'\ 的人也喜欢')
+          vmore(:title='item.title')
           span 支持 Web、iPhone、iPad、Android 阅读器
           ul
             li(v-for='n in 10')
               .cover
                 a.cover(href='')
                   img(src='https://img3.doubanio.com/lpic/s28897671.jpg' alt='')
-              a.title 密林中
-              span.price 19.00元
+              a.title 我是推荐
+              span.price 19999.00元
         vsortcmment
         vcomment
     .side 
@@ -77,7 +67,11 @@ function fetchItem (store, _this) {
 export default {
   computed: {
     item () {
-      return this.$store.state.item
+      let temp = this.$store.state.item
+      temp.catalog = temp.catalog.replace(new RegExp(/(\n)/g),'<br>')
+      temp.author_intro = temp.author_intro.replace(new RegExp(/(\n)/g),'<br>')
+      // console.log(temp.catalog)
+      return temp
     }
   },
   
@@ -99,10 +93,7 @@ export default {
     'vsortcmment': SortComment
   },
 
-  data () {
-    return {
-    }
-  }
+  
 }
 </script>
 
@@ -125,6 +116,7 @@ export default {
             display inline-block
             background #f5f5f5
             margin-right 15px
+            margin-bottom 10px
           a:hover
             background #EAEAEA
             color inherit
@@ -145,6 +137,7 @@ export default {
                 float left
                 width 100%
                 clear both
+              
               img
                 width 100%
     .side
