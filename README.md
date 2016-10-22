@@ -1,6 +1,5 @@
 # 模仿豆瓣前端 
 [![Build Status](https://travis-ci.org/jiakeqi/douban.svg?branch=douban)](https://travis-ci.org/jiakeqi/douban)
-> Use Vue.js 2.0, 
 
 > vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
@@ -41,6 +40,8 @@ npm run build && npm start
    http://127.0.0.1:8080/tag/javascript
    
    http://127.0.0.1:8080/subject/3332698
+4. 增加了搜索功能，优化了排版， 但是豆瓣没有评论接口，所以只能等日后写爬虫解决
+
 
 ## 更新到 vue.js2.0 记录
 1. 在2.0中 `Vue.set(store.item, item)` 不会触发更新dom, `store.item = item` 才可以
@@ -71,6 +72,7 @@ Then you should be able to gulp again. Fixed the issue for me.
 </div>
 ````
 5. 上面的 bug 已经被 尤大 fixed
+6. v-html 替换了 {{{}}}
 
 ### 目录结构
 <pre>

@@ -3,6 +3,7 @@
   .bookview
     li(v-for='book in bookdata')
       .cover(@mouseover='mouseover($event.target, book)', @mouseout='mouseout($event.target)')
+        //- router-link(:to="'/' + book.link")
         a(:href='book.link', target='_blank')
           img(:src='book.pic', :alt='book.title')
       .intervenor-info(v-if='index')

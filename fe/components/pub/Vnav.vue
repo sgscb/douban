@@ -2,7 +2,7 @@
 #vnav
   .nav-primary
     .wapper
-      a(href='/book')
+      router-link(:to="'/book'")
         .nav-logo
       .nav-search
         form(action='/search', method='get', enctype='text/plain')

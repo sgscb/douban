@@ -1,7 +1,7 @@
 <template lang="jade">
 #index-header.wapper
   .cover
-    a(href='/')
+    router-link(:to="'/book'")
       img.logo(src='logo_db.png')
   .anony-srh
     form(action='', method='post')

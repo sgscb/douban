@@ -86,6 +86,11 @@ export default {
           link: 'https://market.douban.com',
           class: 'lnk-market',
           title: '市集'
+        },
+        {
+          link: 'https://github.com/jiakeqi/douban',
+          class: 'lnk-github',
+          title: '开源在 Github'
         }
       ]
     }
