@@ -5,6 +5,6 @@ services:
   - mongodb
   - redis
 script:
-  - npm install babel webpack -g
+  - npm install babel --save
   - npm install
   - npm run build
