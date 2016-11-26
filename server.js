@@ -7,13 +7,13 @@ const resolve = file => path.resolve(__dirname, file)
 const express = require('express')
 const favicon = require('serve-favicon')
 const serialize = require('serialize-javascript')
+const {port} = require('./config')
 
 /**
  * Create HTTP server.
  */
 const app = express()
 const http = require('http')
-const port = process.env.PORT || '8080'
 app.set('port', port)
 const server = http.createServer(app)
 server.listen(port)
