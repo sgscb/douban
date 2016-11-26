@@ -4,7 +4,7 @@
 > vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
 ## live demo （部署在搬瓦工主机上，海外节点，应该需要1s）
-http://jk77.me
+http://book.jk77.me
 
 ## Build
 
@@ -17,8 +17,11 @@ redis-server &
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:4000
 npm run dev
+
+# init data
+curl http://host:port/api/spider // 更替换成真实地址和端口号
 
 # build for production with minification
 npm run build && npm start
@@ -28,18 +31,18 @@ npm run build && npm start
 ## 注意
 
 1. 请确认 `redis` 是 `start` 状态
-2. 在浏览器中访问 http://127.0.0.1:8080/api/spider 启动爬虫
+2. 在浏览器中访问 http://127.0.0.1:4000/api/spider 启动爬虫
 3. 目前完成的界面: 首页, 读书首页, 标签页, 列表页, 详情页
 
-   http://127.0.0.1:8080/
+   http://127.0.0.1:4000/
 
-   http://127.0.0.1:8080/book
+   http://127.0.0.1:4000/book
 
-   http://127.0.0.1:8080/tags
+   http://127.0.0.1:4000/tags
     
-   http://127.0.0.1:8080/tag/javascript
+   http://127.0.0.1:4000/tag/javascript
    
-   http://127.0.0.1:8080/subject/3332698
+   http://127.0.0.1:4000/subject/3332698
 4. 增加了搜索功能，优化了排版， 但是豆瓣没有评论接口，所以只能等日后写爬虫解决
 
 
