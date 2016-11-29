@@ -37,3 +37,34 @@ module.exports.downloadImg = function (url) {
   superagent(url).pipe(fs.createWriteStream(dir + newUrl))
   return host() + '/spider_imgs/' + newUrl
 }
+
+mkdirSync(dir,0,function(e){
+    if(e){
+        console.log('目录创建出错 / 已存在');
+    }else{
+        console.log("目录创建成功")
+    }
+});
+
+function mkdirSync(url,mode,cb){
+    var path = require("path"), arr = url.split("/");
+    mode = mode || 0755;
+    cb = cb || function(){};
+    if(arr[0]==="."){//处理 ./aaa
+        arr.shift();
+    }
+    if(arr[0] == ".."){//处理 ../ddd/d
+        arr.splice(0,2,arr[0]+"/"+arr[1])
+    }
+    function inner(cur){
+        if(!fs.existsSync(cur)){//不存在就创建一个
+            fs.mkdirSync(cur, mode)
+        }
+        if(arr.length){
+            inner(cur + "/"+arr.shift());
+        }else{
+            cb();
+        }
+    }
+    arr.length && inner(arr.shift());
+}
