@@ -6,7 +6,7 @@
 ## live demo （部署在搬瓦工主机上，海外节点，应该需要1s）
 http://book.jk77.me
 
-## Build
+## 1. Build
 
 ``` bash
 
@@ -28,7 +28,7 @@ npm run build && npm start
 
 ```
 
-## 注意
+## 2. 注意
 
 1. 请确认 `redis` 是 `start` 状态
 2. 在浏览器中访问 http://127.0.0.1:4000/api/spider 启动爬虫
@@ -46,19 +46,20 @@ npm run build && npm start
 4. 增加了搜索功能，优化了排版， 但是豆瓣没有评论接口，所以只能等日后写爬虫解决
 
 
-## 更新到 vue.js2.0 记录
+### 3. Vue.js1.0 更新到 Vue.js2.0 记录
 1. 在2.0中 `Vue.set(store.item, item)` 不会触发更新dom, `store.item = item` 才可以
 2. 由于 `server side render` 的原因, 不能使用 `vue-resource` 了, 改用 `superagent` 发请求了
 3. `store.item` 为{}时, 在页面中引用 会直接error, 需要指定详细数据类型
+6. v-html 替换了 {{{}}}
 4. `webpack`出现了 mdzz 的错误 `Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.`
   解决办法为:
 
 ``` bash
-npm uninstall webpack --save-dev
+$ npm uninstall webpack --save-dev
 
 followed by
 
-npm install webpack@2.1.0-beta.22 --save-dev
+$ npm install webpack@2.1.0-beta.22 --save-dev
 
 Then you should be able to gulp again. Fixed the issue for me.
 ```
@@ -73,14 +74,14 @@ Then you should be able to gulp again. Fixed the issue for me.
 <div>
   <span v-for="(item, $index) in items">{{ $index }}</span> // 需要显示声明$index
 </div>
-````
-5. 上面的 bug 已经被 尤大 fixed
-6. v-html 替换了 {{{}}}
+```
 
-### 更新记录
+上面的 bug 已经被 尤大 fixed
+
+### 4. 更新记录
 2016 11 19 根据 i5ting 前辈的建议, 更改了目录结构
 
-### 目录结构
+### 5. 目录结构
 <pre>
 .
 ├── README.md 
