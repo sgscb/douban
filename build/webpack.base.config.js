@@ -5,7 +5,7 @@ const vueConfig = require('./vue-loader.config')
 module.exports = {
   devtool: '#source-map',
   entry: {
-    app: './fe/client-entry.js',
+    app: './frontend/client-entry.js',
     vendor: ['vue', 'vue-router', 'vuex', 'es6-promise']
   },
   output: {

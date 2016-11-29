@@ -1,7 +1,7 @@
 const fs = require('fs')
 const superagent = require('superagent')
 const {host} = require('../../config.js')
-const dir = './public/imgs/'
+const dir = './public/spider_imgs/'
 
 // 把豆瓣的图片保存到本地
 module.exports = function ($) {
@@ -15,7 +15,7 @@ module.exports = function ($) {
       if (newUrl.indexOf('?v=') != -1) {
         newUrl = newUrl.substring(0, newUrl.indexOf('?v='))
       }
-      $(el).attr('src', host() + '/imgs/' + newUrl)
+      $(el).attr('src', host() + '/spider_imgs/' + newUrl)
       superagent(url).pipe(fs.createWriteStream(dir + newUrl))
     })
   // 替换 url
@@ -35,5 +35,5 @@ module.exports.downloadImg = function (url) {
     newUrl = newUrl.substring(0, newUrl.indexOf('?v='))
   }
   superagent(url).pipe(fs.createWriteStream(dir + newUrl))
-  return host() + '/imgs/' + newUrl
+  return host() + '/spider_imgs/' + newUrl
 }
