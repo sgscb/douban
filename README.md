@@ -10,20 +10,20 @@ http://book.jk77.me
 
 ``` bash
 
-#redis-server
+#启动 redis
 
 redis-server &
 
-# install dependencies
+#  安装依赖
 npm install
 
-# serve with hot reload at localhost:4000
+# 启动在开发环境
 npm run dev
 
-# init data
+# 初始化数据 / 爬虫启动
 curl http://host:port/api/spider // 更替换成真实地址和端口号
 
-# build for production with minification
+# 启动在生产环境
 npm run build && npm start
 
 ```
@@ -80,6 +80,7 @@ Then you should be able to gulp again. Fixed the issue for me.
 
 ### 4. 更新记录
 2016 11 19 根据 i5ting 前辈的建议, 更改了目录结构
+2016 12 01 fix babel error
 
 ### 5. 目录结构
 <pre>
