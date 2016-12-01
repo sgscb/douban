@@ -1,5 +1,5 @@
 # 模仿豆瓣前端 
-
+[![Build Status](https://travis-ci.org/jiakeqi/douban.svg?branch=douban)](https://travis-ci.org/jiakeqi/douban)
 
 > vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
