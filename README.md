@@ -10,11 +10,11 @@ http://book.jk77.me
 
 ``` bash
 
-#启动 redis
+# 启动 redis
 
 redis-server &
 
-#  安装依赖
+# 安装依赖
 npm install
 
 # 启动在开发环境
