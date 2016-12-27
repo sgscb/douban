@@ -5,7 +5,7 @@ module.exports.host = function () {
   const isProd = process.env.NODE_ENV === 'production'
   
   const devHost = 'http://127.0.0.1:' + port
-  const prodHost = 'http://jk77.me:' + port
+  const prodHost = 'http://book.jk77.me:' + port
   const host = isProd ? prodHost : devHost
   return host
 }
