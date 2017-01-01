@@ -1,9 +1,9 @@
-# 模仿豆瓣前端 
+# 豆瓣读书前端 
 [![Build Status](https://travis-ci.org/jiakeqi/douban.svg?branch=douban)](https://travis-ci.org/jiakeqi/douban)
 
 > vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
-## live demo （部署在搬瓦工主机上，海外节点，应该需要1s）
+## live demo 
 http://book.jk77.me
 
 ## 1. Build
@@ -11,8 +11,6 @@ http://book.jk77.me
 ``` bash
 
 # 启动 redis
-
-redis-server &
 
 # 安装依赖
 npm install
@@ -24,7 +22,7 @@ npm run dev
 curl http://host:port/api/spider // 更替换成真实地址和端口号
 
 # 启动在生产环境
-npm run build && npm start
+npm run build
 
 ```
 
