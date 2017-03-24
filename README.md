@@ -1,10 +1,9 @@
 # 豆瓣读书前端 
-[![Build Status](https://travis-ci.org/jiakeqi/douban.svg?branch=douban)](https://travis-ci.org/jiakeqi/douban)
+[![Build Status](https://travis-ci.org/ericjjj/douban.svg?branch=douban)](https://travis-ci.org/ericjjj/douban)
 
 > vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
 ## live demo 
-http://book.jk77.me
 
 ## 1. Build
 
