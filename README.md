@@ -1,34 +1,32 @@
-# 豆瓣读书前端 
+# Douban Book Website
 [![Build Status](https://travis-ci.org/ericjjj/douban.svg?branch=douban)](https://travis-ci.org/ericjjj/douban)
 
 > vue.js 2.0, vuex, vue-router, vue-server-renderer,  express, cheerio, superagent, redis
 
-## live demo 
-
-## 1. Build
+## 1. Start
 
 ``` bash
 
-# 启动 redis
+# start redis
 
-# 安装依赖
+# install dependencies
 npm install
 
-# 启动在开发环境
+# start in development
 npm run dev
 
-# 初始化数据 / 爬虫启动
-curl http://host:port/api/spider // 更替换成真实地址和端口号
+# init data, start spider
+curl http://host:port/api/spider // replace your host:port
 
-# 启动在生产环境
+# build for production
 npm run build
 
 ```
 
-## 2. 注意
+## 2. Notes
 
-1. 请确认 `redis` 是 `start` 状态
-2. 在浏览器中访问 http://127.0.0.1:4000/api/spider 启动爬虫
+1. xxx
+2. open http://127.0.0.1:4000/api/spider, start spider
 3. 目前完成的界面: 首页, 读书首页, 标签页, 列表页, 详情页
 
    http://127.0.0.1:4000/
@@ -43,7 +41,7 @@ npm run build
 4. 增加了搜索功能，优化了排版， 但是豆瓣没有评论接口，所以只能等日后写爬虫解决
 
 
-### 3. Vue.js1.0 更新到 Vue.js2.0 记录
+### 3. Vue.js1.0 update to Vue.js2.0
 1. 在2.0中 `Vue.set(store.item, item)` 不会触发更新dom, `store.item = item` 才可以
 2. 由于 `server side render` 的原因, 不能使用 `vue-resource` 了, 改用 `superagent` 发请求了
 3. `store.item` 为{}时, 在页面中引用 会直接error, 需要指定详细数据类型
@@ -61,7 +59,7 @@ $ npm install webpack@2.1.0-beta.22 --save-dev
 Then you should be able to gulp again. Fixed the issue for me.
 ```
 
-然后 `npm run dev` 即可, 蜜汁玄学
+然后 `npm run dev` 即可, 
 参考: https://github.com/angular/angular-cli/issues/2234
 
 ````html
@@ -75,11 +73,11 @@ Then you should be able to gulp again. Fixed the issue for me.
 
 上面的 bug 已经被 尤大 fixed
 
-### 4. 更新记录
+### 4. Update
 2016 11 19 根据 i5ting 前辈的建议, 更改了目录结构
 2016 12 01 fix babel error
 
-### 5. 目录结构
+### 5. Tree
 <pre>
 .
 ├── README.md 
