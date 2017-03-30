@@ -58,7 +58,7 @@ Then you should be able to gulp again. Fixed the issue for me.
  `npm run dev`
 from: https://github.com/angular/angular-cli/issues/2234
 
-````html
+```html
 <div>
   <span v-for="n in 10">{{ n }}</span> // n
 </div>
