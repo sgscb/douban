@@ -29,15 +29,15 @@ npm run build
 2. open http://127.0.0.1:4000/api/spider, start spider
 3. pages:
 
-   http://127.0.0.1:4000/
+   -  http://127.0.0.1:4000/
 
-   http://127.0.0.1:4000/book
+   -  http://127.0.0.1:4000/book
 
-   http://127.0.0.1:4000/tags
+   -  http://127.0.0.1:4000/tags
     
-   http://127.0.0.1:4000/tag:name
+   -  http://127.0.0.1:4000/tag:name
    
-   http://127.0.0.1:4000/subject:id
+   -  http://127.0.0.1:4000/subject:id
 
 
 ### 3. Vue.js1.0 update to Vue.js2.0
